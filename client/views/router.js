@@ -25,7 +25,8 @@ Router.privateRoutes = [
 	"user_settings.change_pass",
 	"logout",
 	"bot",
-	"bot.insert"
+	"bot.insert",
+	"bot.details"
 ];
 
 Router.freeRoutes = [
@@ -84,4 +85,5 @@ Router.map(function () {
 	this.route("/logout", {name: "logout", title: "", controller: "LogoutController"});
 	this.route("/bot", {name: "bot", title: "", controller: "BotController"});
 	this.route("/bot/insert", {name: "bot.insert", title: "", controller: "BotInsertController"});
+	this.route("/bot/details", {name: "bot.details", title: "", controller: "BotDetailsController"});
 });

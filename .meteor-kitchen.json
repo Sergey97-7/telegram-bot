@@ -266,7 +266,7 @@
 		},
 		{
 			"path": "client/views/bot/details/details.html",
-			"checksum": "711f1fc2eafa78eed30d70bc58f3041803be1c25"
+			"checksum": "4326891ddeb40fd3e0aaedd47097b41d92668f52"
 		},
 		{
 			"path": "client/views/bot/details/details.js",
@@ -274,7 +274,7 @@
 		},
 		{
 			"path": "client/views/bot/details/details_controller.js",
-			"checksum": "acdacd0d7f9b21310b2d4280393d97c8d04be341"
+			"checksum": "e9dbfea4e75c36d6c1ab3b294c2b9d7eaf681db8"
 		},
 		{
 			"path": "both/collections/question.js",

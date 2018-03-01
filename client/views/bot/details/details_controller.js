@@ -19,7 +19,7 @@ this.BotDetailsController = RouteController.extend({
 		var botId = this._id;
 
 		var subs = [
-			Meteor.subscribe("messages_details", botId)
+			Meteor.subscribe("message_details", botId)
 		];
 		var ready = true;
 		_.each(subs, function(sub) {
@@ -34,7 +34,7 @@ this.BotDetailsController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			messages_details: Question.findOne({_id:botId}, {})
+			message_details: Question.findOne({_id:botId}, {})
 		};
 		
 

@@ -85,5 +85,5 @@ Router.map(function () {
 	this.route("/logout", {name: "logout", title: "", controller: "LogoutController"});
 	this.route("/bot", {name: "bot", title: "", controller: "BotController"});
 	this.route("/bot/insert", {name: "bot.insert", title: "", controller: "BotInsertController"});
-	this.route("/bot/details", {name: "bot.details", title: "", controller: "BotDetailsController"});
+	this.route("/bot/details/:botId", {name: "bot.details", title: "", controller: "BotDetailsController"});
 });

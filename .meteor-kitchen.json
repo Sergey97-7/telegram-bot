@@ -2,7 +2,7 @@
 	"output_files": [
 		{
 			"path": "client/views/router.js",
-			"checksum": "5eeaaf3aec38c4857d29244d764956d390998bd8"
+			"checksum": "2fba133c3151f8ade3042984ab88e325b9b6c307"
 		},
 		{
 			"path": "server/controllers/router.js",
@@ -246,7 +246,7 @@
 		},
 		{
 			"path": "client/views/bot/bot.js",
-			"checksum": "4c743d4b363f15fdcc6adf8b63e62d216bc29caa"
+			"checksum": "a11c90d51f4dd372c9c3a8b9d99ce59d57e9b94b"
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
@@ -274,7 +274,7 @@
 		},
 		{
 			"path": "client/views/bot/details/details_controller.js",
-			"checksum": "1544faeda2e8a1f59fa35ac937c2691a17cb4d31"
+			"checksum": "1971b2be648149fe35964b5597bec7c5c6d05451"
 		},
 		{
 			"path": "both/collections/question.js",
@@ -290,7 +290,7 @@
 		},
 		{
 			"path": "server/publish/question.js",
-			"checksum": "cb314d96144d8e1b1018b514c2a3016089a99a80"
+			"checksum": "713392384bd919f12e5f882dd6d1044f93595ccc"
 		},
 		{
 			"path": "lib/string_utils.js",

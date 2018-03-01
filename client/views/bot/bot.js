@@ -265,7 +265,7 @@ Template.BotNewDataViewTableItems.events({
 	"click td": function(e, t) {
 		e.preventDefault();
 		
-		Router.go("bot.details", mergeObjects(Router.currentRouteParams(), {}));
+		Router.go("bot.details", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
 		return false;
 	},
 

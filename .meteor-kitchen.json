@@ -278,11 +278,11 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "7831fb846b32758136bd38bc8716dd1c67a16792"
+			"checksum": "c4465737bb48735a42c8be80c9342c084f0f5f57"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",
-			"checksum": "3f895d60fa6a2d63b20af4ba11340e98fa349076"
+			"checksum": "caaaad6b4b89f6a499c5a49e78a7e4c12c6bc60f"
 		},
 		{
 			"path": "client/views/bot/edit/edit_controller.js",

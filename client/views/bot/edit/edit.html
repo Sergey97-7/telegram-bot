@@ -27,7 +27,7 @@
 					message
 				</label>
 				<div class="input-div">
-					<input type="text" name="bot_msg" value="" class="form-control " autofocus="autofocus" required="required" data-type="string">
+					<input type="text" name="bot_msg" value="{{message_details.bot_msg}}" class="form-control " autofocus="autofocus" required="required" data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -39,7 +39,7 @@
 					answer_type
 				</label>
 				<div class="input-div">
-					<input type="text" name="answer_type" value="" class="form-control " data-type="integer">
+					<input type="text" name="answer_type" value="{{message_details.answer_type}}" class="form-control " data-type="integer">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -51,7 +51,7 @@
 					answer_var
 				</label>
 				<div class="input-div">
-					<input type="text" name="answer_var" value="" class="form-control " data-type="integer">
+					<input type="text" name="answer_var" value="{{message_details.answer_var}}" class="form-control " data-type="integer">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -63,7 +63,7 @@
 					next_question
 				</label>
 				<div class="input-div">
-					<input type="text" name="next_question" value="" class="form-control " data-type="string">
+					<input type="text" name="next_question" value="{{message_details.next_question}}" class="form-control " data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

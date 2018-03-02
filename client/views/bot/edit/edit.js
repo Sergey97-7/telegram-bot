@@ -73,7 +73,7 @@ Template.BotEditEditForm.events({
 		var self = this;
 
 		function submitAction(result, msg) {
-			var botEditEditFormMode = "insert";
+			var botEditEditFormMode = "update";
 			if(!t.find("#form-cancel-button")) {
 				switch(botEditEditFormMode) {
 					case "insert": {
@@ -107,7 +107,7 @@ Template.BotEditEditForm.events({
 			function(values) {
 				
 
-				Meteor.call("questionInsert", values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
+				Meteor.call("questionUpdate", t.data.message_details._id, values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
 			}
 		);
 

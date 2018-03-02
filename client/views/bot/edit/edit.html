@@ -1,0 +1,86 @@
+<template name="BotEdit">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+			</div>
+		</div>
+		{{> BotEditEditForm}}
+	</div>
+</template>
+
+<template name="BotEditEditForm">
+	<div id="bot-edit-edit-form" class="">
+		<form role="form">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}
+
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+			<div class="form-group  field-bot_msg">
+				<label for="bot_msg">
+					message
+				</label>
+				<div class="input-div">
+					<input type="text" name="bot_msg" value="" class="form-control " autofocus="autofocus" required="required" data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-answer_type">
+				<label for="answer_type">
+					answer_type
+				</label>
+				<div class="input-div">
+					<input type="text" name="answer_type" value="" class="form-control " data-type="integer">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-answer_var">
+				<label for="answer_var">
+					answer_var
+				</label>
+				<div class="input-div">
+					<input type="text" name="answer_var" value="" class="form-control " data-type="integer">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-next_question">
+				<label for="next_question">
+					next_question
+				</label>
+				<div class="input-div">
+					<input type="text" name="next_question" value="" class="form-control " data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<a href="#" id="form-cancel-button" class="btn btn-default">
+						Cancel
+					</a>
+					<button id="form-submit-button" class="btn btn-success" type="submit">
+						Save
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+

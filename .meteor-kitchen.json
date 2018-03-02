@@ -2,7 +2,7 @@
 	"output_files": [
 		{
 			"path": "client/views/router.js",
-			"checksum": "2fba133c3151f8ade3042984ab88e325b9b6c307"
+			"checksum": "4caa2341457925d961008667d627ecff5186bdc5"
 		},
 		{
 			"path": "server/controllers/router.js",
@@ -277,6 +277,18 @@
 			"checksum": "1971b2be648149fe35964b5597bec7c5c6d05451"
 		},
 		{
+			"path": "client/views/bot/edit/edit.html",
+			"checksum": "7831fb846b32758136bd38bc8716dd1c67a16792"
+		},
+		{
+			"path": "client/views/bot/edit/edit.js",
+			"checksum": "3f895d60fa6a2d63b20af4ba11340e98fa349076"
+		},
+		{
+			"path": "client/views/bot/edit/edit_controller.js",
+			"checksum": "5aa1f09c13cd95cd9f9d1c90fe006dba5ffdc22d"
+		},
+		{
 			"path": "both/collections/question.js",
 			"checksum": "04d8b921f38a293aab5974e34114b3b8838cd819"
 		},
@@ -499,6 +511,7 @@
 		"client/views/admin/users/edit/",
 		"client/views/bot/",
 		"client/views/bot/details/",
+		"client/views/bot/edit/",
 		"client/views/bot/insert/",
 		"client/views/forgot_password/",
 		"client/views/home_private/",

@@ -39,7 +39,11 @@
 					answer_type
 				</label>
 				<div class="input-div">
-					<input type="text" name="answer_type" value="{{message_details.answer_type}}" class="form-control " data-type="integer">
+					<select class="form-control " name="answer_type" data-type="integer">
+						<option value="integer" {{optionIsSelected message_details.answer_type "integer"}}>							integer</option>
+						<option value="string" {{optionIsSelected message_details.answer_type "string"}}>							string</option>
+						<option value="select" {{optionIsSelected message_details.answer_type "select"}}>							select</option>
+					</select>
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

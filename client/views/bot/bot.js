@@ -318,7 +318,7 @@ Template.BotNewDataViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		/**/
+		Router.go("bot.edit", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
 		return false;
 	}
 });

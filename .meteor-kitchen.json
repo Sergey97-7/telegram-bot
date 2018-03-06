@@ -254,7 +254,7 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "e3ebb1743f058baf89e89851b4d8200a87e20d77"
+			"checksum": "1cc9019dfc7c77389a789a866e07d7139e0a8023"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "a6ee4edf114646cd38183308a07de7ce5d8a1fec"
+			"checksum": "87952adccd06dc277312138dd76cf70516217b9e"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",

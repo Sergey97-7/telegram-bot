@@ -1,5 +1,5 @@
 Meteor.publish("messages", function() {
-	return Question.find({}, {});
+	return Question.find({}, {sort:[["Id","desc"]]});
 });
 
 Meteor.publish("messages_empty", function() {

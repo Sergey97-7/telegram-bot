@@ -34,7 +34,7 @@ this.BotController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			messages: Question.find({}, {sort:[["Id","desc"]]})
+			messages: Question.find({}, {sort:[["Id","asc"]]})
 		};
 		
 

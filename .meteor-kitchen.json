@@ -254,11 +254,11 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "b61b640278d256ba558b2df1287294bf02082aff"
+			"checksum": "2bf464caa5d01286c257a9f38809e63e222efd54"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
-			"checksum": "f6cda7a5f6a2262b6c3bae5d3986be558056e521"
+			"checksum": "58effc939a1514a61b6a92059568830e36120f31"
 		},
 		{
 			"path": "client/views/bot/insert/insert_controller.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "5d1bc93d1f5ee572a6e40569c9d2266595d3fecf"
+			"checksum": "3a8eae90df4b71b5fe3e3944ae917865a033425c"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",

@@ -140,6 +140,6 @@ Template.BotInsertInsertForm.helpers({
 	},
 	"errorMessage": function() {
 		return pageSession.get("botInsertInsertFormErrorMessage");
-	}, 
-	'nextId': function() { var max = 0; var Ids = bot.find({}, { fields: { Id: 1 }}).fetch(); _.each(Ids, function(doc) { var intNum = parseInt(doc.Id); if(!isNaN(intNum) && intNum > max) max = intNum; }); return max + 1; }
+	}
+	
 });

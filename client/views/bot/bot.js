@@ -73,7 +73,7 @@ var BotNewDataViewItems = function(cursor) {
 
 var BotNewDataViewExport = function(cursor, fileType) {
 	var data = BotNewDataViewItems(cursor);
-	var exportFields = [];
+	var exportFields = ["Id"];
 
 	var str = exportArrayOfObjects(data, exportFields, fileType);
 

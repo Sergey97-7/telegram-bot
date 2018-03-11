@@ -242,11 +242,11 @@
 		},
 		{
 			"path": "client/views/bot/bot.html",
-			"checksum": "cf8454616efbf8e10d9e70724b79070c1647ddc0"
+			"checksum": "e5d086b75701f1c1c9f6082b1e0662e5a19c0ea2"
 		},
 		{
 			"path": "client/views/bot/bot.js",
-			"checksum": "d6a91a0b18b4f620ccd1d566517c7c28a0c69e73"
+			"checksum": "6f9e53d610bc10d5daee95dec516161f77853e2c"
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
@@ -254,11 +254,11 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "081263e6cb81cd346891f939aa27f293ef984f80"
+			"checksum": "b61b640278d256ba558b2df1287294bf02082aff"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
-			"checksum": "4719637471408a5c48364c3c7e1428d4875fb34c"
+			"checksum": "f6cda7a5f6a2262b6c3bae5d3986be558056e521"
 		},
 		{
 			"path": "client/views/bot/insert/insert_controller.js",

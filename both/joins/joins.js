@@ -1,3 +1,3 @@
 // Question
-Question.join(Question, "question", "next_question", ["Id"]);
+Question.join(Question, "botId", "next_question", ["bot_msg"]);
 

@@ -1,3 +1,3 @@
 // Question
-Question.join(Question, "question", "question", ["Id"]);
+Question.join(Question, "question", "next_question", ["Id"]);
 

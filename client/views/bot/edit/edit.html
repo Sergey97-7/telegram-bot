@@ -99,7 +99,7 @@
 				<div class="input-div">
 					<select multiple="multiple" class="form-control " name="question" data-type="string">
 						{{#each messages}}
-						<option value="{{_id}}" {{optionIsSelected ../message_details.question _id}}>							{{Id}}</option>
+						<option value="{{}}" {{optionIsSelected ../message_details.question }}>							{{Id}}</option>
 						{{/each}}
 					</select>
 					<span id="help-text" class="help-block">

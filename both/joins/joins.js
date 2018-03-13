@@ -1,3 +1,3 @@
 // Question
-Question.join(Log, "next_question", "question", ["time"]);
+Question.join(Question, "next_question", "question", ["Id"]);
 

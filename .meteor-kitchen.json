@@ -302,7 +302,7 @@
 		},
 		{
 			"path": "server/publish/question.js",
-			"checksum": "2489066613e59ea10fd5a554863a9454b0c0b1eb"
+			"checksum": "6dbb541f26f9269e9f03b90e6c61531bbbbdbd16"
 		},
 		{
 			"path": "both/collections/log.js",
@@ -319,6 +319,10 @@
 		{
 			"path": "server/publish/log.js",
 			"checksum": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+		},
+		{
+			"path": "both/joins/joins.js",
+			"checksum": "6bb000226322fddd7a21b500f69df11ff64e56d7"
 		},
 		{
 			"path": "lib/string_utils.js",
@@ -560,6 +564,7 @@
 	"packages": {
 		"meteor": [
 			"accounts-password",
+			"perak:joins",
 			"blaze-html-templates",
 			"accounts-base",
 			"http",

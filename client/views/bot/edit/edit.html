@@ -92,14 +92,14 @@
 					</span>
 				</div>
 			</div>
-			<div class="form-group  field-bot-id">
-				<label for="botId">
+			<div class="form-group  field-ques">
+				<label for="ques">
 					next question
 				</label>
 				<div class="input-div">
-					<select class="form-control " name="botId" data-type="string">
+					<select class="form-control " name="ques" data-type="string">
 						{{#each messages}}
-						<option value="{{_id}}" {{optionIsSelected ../message_details.botId _id}}>							{{Id}}</option>
+						<option value="{{_id}}" {{optionIsSelected ../message_details.ques _id}}>							{{Id}}</option>
 						{{/each}}
 					</select>
 					<span id="help-text" class="help-block">

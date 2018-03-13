@@ -72,7 +72,6 @@ npm-bcrypt@0.9.3
 npm-mongo@2.2.34
 observe-sequence@1.0.16
 ordered-dict@1.1.0
-perak:joins@1.1.9
 perak:markdown@1.0.5
 perak:user-roles@1.0.12
 promise@0.10.2

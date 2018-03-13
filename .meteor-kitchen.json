@@ -246,7 +246,7 @@
 		},
 		{
 			"path": "client/views/bot/bot.js",
-			"checksum": "c0d652ca956606ab5e8787d1edb992f643e42746"
+			"checksum": "2107325a470381518e2925782f16f416c1d9ff0a"
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
@@ -254,7 +254,7 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "2daa13fe763e6b48bd5a9fe88350788705525feb"
+			"checksum": "ddc5f3d49e4056b4980a071f8187ea4e2390e6e6"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "33cbfc911f42bede700ab99f4370c8cb1125f4e4"
+			"checksum": "9fc8d4d8bfd7f54ee8a6d728fdcf1ed90ddbcb01"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",
@@ -302,7 +302,7 @@
 		},
 		{
 			"path": "server/publish/question.js",
-			"checksum": "6dbb541f26f9269e9f03b90e6c61531bbbbdbd16"
+			"checksum": "2489066613e59ea10fd5a554863a9454b0c0b1eb"
 		},
 		{
 			"path": "both/collections/log.js",
@@ -319,10 +319,6 @@
 		{
 			"path": "server/publish/log.js",
 			"checksum": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
-		},
-		{
-			"path": "both/joins/joins.js",
-			"checksum": "358ed3d02fc5f991a6e2a91c1db7d4861a0db438"
 		},
 		{
 			"path": "lib/string_utils.js",
@@ -564,7 +560,6 @@
 	"packages": {
 		"meteor": [
 			"accounts-password",
-			"perak:joins",
 			"blaze-html-templates",
 			"accounts-base",
 			"http",

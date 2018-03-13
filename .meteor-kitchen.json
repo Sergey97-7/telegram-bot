@@ -242,11 +242,11 @@
 		},
 		{
 			"path": "client/views/bot/bot.html",
-			"checksum": "308c1c49eb19d46a6b91723046e401e3e14db303"
+			"checksum": "16aa13c8db4cd772d347b9edd531df9f4d5fea25"
 		},
 		{
 			"path": "client/views/bot/bot.js",
-			"checksum": "fec760a79f507fc3ff851cc322633c1c26c0ba48"
+			"checksum": "c21cc408badf9a4f5699b428d9968a3f3fc058d8"
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
@@ -254,7 +254,7 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "37165a502dc40e183280cde5d90cbf9d77dd5a58"
+			"checksum": "be6a1fd03966faaf7ed3f06c2d9efedcbffcfd2d"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
@@ -266,7 +266,7 @@
 		},
 		{
 			"path": "client/views/bot/details/details.html",
-			"checksum": "08ef938752261cd55fa6a12e5ed264337f623eac"
+			"checksum": "d6490abaab8d073dadd3b08007c07fd036a186e8"
 		},
 		{
 			"path": "client/views/bot/details/details.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "06633b7d5286f2b74c9064b88d3a4e7bb7a51a25"
+			"checksum": "a13555b2b66b6df7637f1e365d5333456943e0f3"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",
@@ -322,7 +322,7 @@
 		},
 		{
 			"path": "both/joins/joins.js",
-			"checksum": "5375f454339215baafc42605a96c2db29adf21af"
+			"checksum": "47ebc679ce4396f127701acfd3b8efcf42b3bd60"
 		},
 		{
 			"path": "lib/string_utils.js",

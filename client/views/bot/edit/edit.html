@@ -97,7 +97,7 @@
 					next question
 				</label>
 				<div class="input-div">
-					<select class="form-control " name="ques" data-type="string">
+					<select multiple="multiple" class="form-control " name="ques" data-type="array">
 						{{#each messages}}
 						<option value="{{_id}}" {{optionIsSelected ../message_details.ques _id}}>							{{Id}}</option>
 						{{/each}}

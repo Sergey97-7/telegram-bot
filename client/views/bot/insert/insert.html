@@ -100,9 +100,9 @@
 					next question
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" class="form-control " name="question" data-type="string">
+					<select class="form-control " name="question" data-type="string">
 						{{#each messages}}
-						<option value="{{1}}">							{{Id}}</option>
+						<option value="{{_id}}">							{{Id}}</option>
 						{{/each}}
 					</select>
 					<span id="help-text" class="help-block">

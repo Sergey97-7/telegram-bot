@@ -32,41 +32,6 @@
 					</span>
 				</div>
 			</div>
-			<div id="dataview-controls-export" class="form-group">
-				{{#if isNotEmpty}}
-		{{#if isFound}}
-				<div>
-				</div>
-				{{else}}
-				<div class="btn-group">
-					<button type="button" class="btn btn-default" id="dataview-export-default">
-						Export
-					</button>
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-						<span class="caret">
-						</span>
-					</button>
-					<ul class="dropdown-menu" role="menu">
-						<li>
-							<a href="#" id="dataview-export-csv">
-								Export to CSV
-							</a>
-						</li>
-						<li>
-							<a href="#" id="dataview-export-tsv">
-								Export to TSV
-							</a>
-						</li>
-						<li>
-							<a href="#" id="dataview-export-json">
-								Export to JSON
-							</a>
-						</li>
-					</ul>
-				</div>
-				{{/if}}
-	{{/if}}
-			</div>
 		</form>
 		{{#if isNotEmpty}}
 			{{#if isNotFound}}
@@ -105,6 +70,9 @@
 				<th class="th-sortable" data-sort="next_question">
 					next_question
 				</th>
+				<th class="th-sortable" data-sort="first_question">
+					first_question
+				</th>
 				<th>
 					&nbsp;
 				</th>
@@ -135,6 +103,9 @@
 		</td>
 		<td>
 			{{next_question}}
+		</td>
+		<td>
+			<input type="checkbox" class="inline-checkbox {{editButtonClass}}" data-field="first_question" {{checked first_question}}>
 		</td>
 		<td class="td-icon">
 			<span id="edit-button" class="fa fa-pencil {{editButtonClass}}" title="Edit">

@@ -86,11 +86,25 @@
 					next_question
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" data-role="tagsinput" class="form-control " name="next_question" data-type="array">
-						{{#each getArray ""}}
-						<option id="form-input-tags-item" value="{{this}}">							{{this}}</option>
+					<select multiple="multiple" class="form-control " name="next_question" data-type="array">
+						{{#each messages}}
+						<option value="{{}}">							{{}}</option>
 						{{/each}}
 					</select>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-first_question">
+				<div class="input-div">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="" name="first_question" data-type="bool">
+							first_question
+						</label>
+					</div>
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

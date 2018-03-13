@@ -43,7 +43,7 @@ var BotNewDataViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["Id", "bot_msg", "answer_type", "answer_var", "next_question"];
+		var searchFields = ["Id", "bot_msg", "answer_type", "answer_var", "next_question", "first_question"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {
@@ -73,7 +73,7 @@ var BotNewDataViewItems = function(cursor) {
 
 var BotNewDataViewExport = function(cursor, fileType) {
 	var data = BotNewDataViewItems(cursor);
-	var exportFields = ["Id"];
+	var exportFields = [];
 
 	var str = exportArrayOfObjects(data, exportFields, fileType);
 

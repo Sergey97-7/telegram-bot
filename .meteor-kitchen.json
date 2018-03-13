@@ -242,7 +242,7 @@
 		},
 		{
 			"path": "client/views/bot/bot.html",
-			"checksum": "97fb1797ff98ee7626cf58180c7cd762ddd30518"
+			"checksum": "6985e3c4e613452ad4dc62a0b9c9e4683312bfd2"
 		},
 		{
 			"path": "client/views/bot/bot.js",
@@ -266,7 +266,7 @@
 		},
 		{
 			"path": "client/views/bot/details/details.html",
-			"checksum": "d4a6c9eb9ed075cf5f1f4fc396c92e6529ebd037"
+			"checksum": "c2a58209321dcfe77dedd6b76eb5de159595295b"
 		},
 		{
 			"path": "client/views/bot/details/details.js",

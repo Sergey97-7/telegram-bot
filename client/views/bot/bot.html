@@ -67,8 +67,8 @@
 				<th class="th-sortable" data-sort="answer_var">
 					answer_var
 				</th>
-				<th class="th-sortable" data-sort="question">
-					next_question_view
+				<th class="th-sortable" data-sort="first_question">
+					first_question
 				</th>
 				<th>
 					&nbsp;
@@ -99,7 +99,7 @@
 			{{answer_var}}
 		</td>
 		<td>
-			{{question}}
+			<input type="checkbox" class="inline-checkbox {{editButtonClass}}" data-field="first_question" {{checked first_question}}>
 		</td>
 		<td class="td-icon">
 			<span id="edit-button" class="fa fa-pencil {{editButtonClass}}" title="Edit">

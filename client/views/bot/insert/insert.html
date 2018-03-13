@@ -100,11 +100,7 @@
 					next question
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" class="form-control " name="ques" data-type="array">
-						{{#each messages}}
-						<option value="{{_id}}">							{{Id}}</option>
-						{{/each}}
-					</select>
+					<input type="text" name="ques" value="" class="form-control " data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

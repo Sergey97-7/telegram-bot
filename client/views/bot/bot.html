@@ -70,6 +70,12 @@
 				<th class="th-sortable" data-sort="first_question">
 					first_question
 				</th>
+				<th class="th-sortable" data-sort="questionId">
+					questionId
+				</th>
+				<th class="th-sortable" data-sort="question.bot_msg">
+					question.bot_msg
+				</th>
 				<th>
 					&nbsp;
 				</th>
@@ -100,6 +106,12 @@
 		</td>
 		<td>
 			<input type="checkbox" class="inline-checkbox {{editButtonClass}}" data-field="first_question" {{checked first_question}}>
+		</td>
+		<td>
+			{{questionId}}
+		</td>
+		<td>
+			{{question.bot_msg}}
 		</td>
 		<td class="td-icon">
 			<span id="edit-button" class="fa fa-pencil {{editButtonClass}}" title="Edit">

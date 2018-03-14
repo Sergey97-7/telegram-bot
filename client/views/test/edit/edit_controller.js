@@ -35,7 +35,7 @@ this.TestEditController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			messages: Question.find({}, {sort:[["bot_msg"]]}),
+			messages: Question.find({}, {}),
 			test_details: Test.findOne({_id:this.params.testId}, {})
 		};
 		

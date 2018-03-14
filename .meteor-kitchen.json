@@ -326,7 +326,7 @@
 		},
 		{
 			"path": "client/views/test/insert/insert.html",
-			"checksum": "5e406b6abfab109552b0ae3d889c186f29ee926f"
+			"checksum": "d0451812c7b949dee644971a3273b3393bbfe63f"
 		},
 		{
 			"path": "client/views/test/insert/insert.js",
@@ -350,7 +350,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
-			"checksum": "0a384cf145969edc6e808e4693db221b99ffeb1e"
+			"checksum": "9efce970ef6f8900834314f124e38189330909d9"
 		},
 		{
 			"path": "client/views/test/edit/edit.js",
@@ -410,7 +410,7 @@
 		},
 		{
 			"path": "both/joins/joins.js",
-			"checksum": "081270c11215039d0e59dbbdd54b8fd86a41ddb0"
+			"checksum": "9d554a850b2bb9a38ce3fe51fd79db6aff40dc5b"
 		},
 		{
 			"path": "lib/string_utils.js",

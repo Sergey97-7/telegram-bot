@@ -1,3 +1,3 @@
 // Test
-Test.join(Question, "questionId", "question", ["Id"]);
+Test.join(Question, "questionId", "question", []);
 

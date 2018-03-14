@@ -35,7 +35,7 @@ this.TestInsertController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			messages: Question.find({}, {sort:[["Id","asc"]]}),
+			messages: Question.find({}, {sort:[["bot_msg"]]}),
 			tests_empty: Test.findOne({_id:null}, {})
 		};
 		

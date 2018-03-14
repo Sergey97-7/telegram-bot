@@ -250,7 +250,7 @@
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
-			"checksum": "5c3805eda60a853f38670a9bb3c93dd2afd7d19c"
+			"checksum": "1a342bf59dd54a96b1202d4dd355d9bfac48da01"
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
@@ -314,11 +314,11 @@
 		},
 		{
 			"path": "client/views/test/test.html",
-			"checksum": "c1706982f83620c9d544c03803c9d797e5364fa2"
+			"checksum": "1d4e732fea57c3264763db04c82a23551b0e256b"
 		},
 		{
 			"path": "client/views/test/test.js",
-			"checksum": "211c7ac9b25dfd25606bf4ce9159cffa1cc4b579"
+			"checksum": "0827de0ceea0aa3bb255d35659f4a2e495f87ab6"
 		},
 		{
 			"path": "client/views/test/test_controller.js",
@@ -326,7 +326,7 @@
 		},
 		{
 			"path": "client/views/test/insert/insert.html",
-			"checksum": "3e8ab42eed5e857f239fc0ef1cd71126ff953ecf"
+			"checksum": "8d497a334c6f70ff2124246c17cb9e1d843f0735"
 		},
 		{
 			"path": "client/views/test/insert/insert.js",
@@ -334,11 +334,11 @@
 		},
 		{
 			"path": "client/views/test/insert/insert_controller.js",
-			"checksum": "e304761d269f70f5c1c033daa7a3c9271bae7aae"
+			"checksum": "9a6942df24347fbdc7894b6196a7ccca05f8e5a6"
 		},
 		{
 			"path": "client/views/test/details/details.html",
-			"checksum": "8f60d18d8fb84bfbbf52f4590b5342fc2e294fc9"
+			"checksum": "f5d3435ee6fd0ff9d6a3fff63415855822c17699"
 		},
 		{
 			"path": "client/views/test/details/details.js",
@@ -350,7 +350,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
-			"checksum": "3484f7265c25644dc3e01ae1152b5662bb9afe38"
+			"checksum": "250f6e48b44b88daa56c9092e7ef8b74e911d5cd"
 		},
 		{
 			"path": "client/views/test/edit/edit.js",
@@ -358,7 +358,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit_controller.js",
-			"checksum": "235b00a3e66a911aca1418baf081e664e9fb914f"
+			"checksum": "da0d94850b51c8be327ac5659696da534226e5fd"
 		},
 		{
 			"path": "both/collections/question.js",
@@ -374,7 +374,7 @@
 		},
 		{
 			"path": "server/publish/question.js",
-			"checksum": "2489066613e59ea10fd5a554863a9454b0c0b1eb"
+			"checksum": "e1b03e31d52d2b285710b4f61ef9994c87692089"
 		},
 		{
 			"path": "both/collections/log.js",

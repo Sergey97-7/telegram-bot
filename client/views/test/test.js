@@ -43,7 +43,7 @@ var TestTestViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = [];
+		var searchFields = ["id", "string"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {
@@ -156,22 +156,22 @@ Template.TestTestView.events({
 
 	"click #dataview-export-default": function(e, t) {
 		e.preventDefault();
-		TestTestViewExport(this., "csv");
+		TestTestViewExport(this.tests, "csv");
 	},
 
 	"click #dataview-export-csv": function(e, t) {
 		e.preventDefault();
-		TestTestViewExport(this., "csv");
+		TestTestViewExport(this.tests, "csv");
 	},
 
 	"click #dataview-export-tsv": function(e, t) {
 		e.preventDefault();
-		TestTestViewExport(this., "tsv");
+		TestTestViewExport(this.tests, "tsv");
 	},
 
 	"click #dataview-export-json": function(e, t) {
 		e.preventDefault();
-		TestTestViewExport(this., "json");
+		TestTestViewExport(this.tests, "json");
 	}
 
 	
@@ -180,17 +180,17 @@ Template.TestTestView.events({
 Template.TestTestView.helpers({
 
 	"insertButtonClass": function() {
-		return .userCanInsert(Meteor.userId(), {}) ? "" : "hidden";
+		return Test.userCanInsert(Meteor.userId(), {}) ? "" : "hidden";
 	},
 
 	"isEmpty": function() {
-		return !this. || this..count() == 0;
+		return !this.tests || this.tests.count() == 0;
 	},
 	"isNotEmpty": function() {
-		return this. && this..count() > 0;
+		return this.tests && this.tests.count() > 0;
 	},
 	"isNotFound": function() {
-		return this. && pageSession.get("TestTestViewSearchString") && TestTestViewItems(this.).length == 0;
+		return this.tests && pageSession.get("TestTestViewSearchString") && TestTestViewItems(this.tests).length == 0;
 	},
 	"searchString": function() {
 		return pageSession.get("TestTestViewSearchString");
@@ -242,7 +242,7 @@ Template.TestTestViewTable.events({
 
 Template.TestTestViewTable.helpers({
 	"tableItems": function() {
-		return TestTestViewItems(this.);
+		return TestTestViewItems(this.tests);
 	}
 });
 
@@ -280,7 +280,7 @@ Template.TestTestViewTableItems.events({
 		var values = {};
 		values[fieldName] = !this[fieldName];
 
-		Meteor.call("", this._id, values, function(err, res) {
+		Meteor.call("testUpdate", this._id, values, function(err, res) {
 			if(err) {
 				alert(err.message);
 			}
@@ -301,7 +301,7 @@ Template.TestTestViewTableItems.events({
 					label: "Yes",
 					className: "btn-success",
 					callback: function() {
-						Meteor.call("", me._id, function(err, res) {
+						Meteor.call("testRemove", me._id, function(err, res) {
 							if(err) {
 								alert(err.message);
 							}
@@ -328,10 +328,10 @@ Template.TestTestViewTableItems.helpers({
 
 	"checked": function(value) { return value ? "checked" : "" }, 
 	"editButtonClass": function() {
-		return .userCanUpdate(Meteor.userId(), this) ? "" : "hidden";
+		return Test.userCanUpdate(Meteor.userId(), this) ? "" : "hidden";
 	},
 
 	"deleteButtonClass": function() {
-		return .userCanRemove(Meteor.userId(), this) ? "" : "hidden";
+		return Test.userCanRemove(Meteor.userId(), this) ? "" : "hidden";
 	}
 });

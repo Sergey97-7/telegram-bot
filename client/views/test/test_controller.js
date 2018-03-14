@@ -19,6 +19,7 @@ this.TestController = RouteController.extend({
 		
 
 		var subs = [
+			Meteor.subscribe("tests")
 		];
 		var ready = true;
 		_.each(subs, function(sub) {
@@ -32,7 +33,8 @@ this.TestController = RouteController.extend({
 		
 
 		var data = {
-			params: this.params || {}
+			params: this.params || {},
+			tests: Test.find({}, {})
 		};
 		
 

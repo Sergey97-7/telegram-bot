@@ -11,6 +11,17 @@
 <template name="TestTestView">
 	<div id="test-test-view" class="">
 		<form id="dataview-controls" class="form-inline">
+			<div id="dataview-controls-search">
+				<div id="dataview-controls-search-group" class="input-group">
+					<input type="text" class="form-control" id="dataview-search-input" placeholder="Search" name="search" value="{{searchString}}" autofocus="autofocus">
+					<span class="input-group-btn">
+						<button type="button" id="dataview-search-button" class="btn btn-primary">
+							<span class="fa fa-search">
+							</span>
+						</button>
+					</span>
+				</div>
+			</div>
 		</form>
 		{{#if isNotEmpty}}
 			{{#if isNotFound}}
@@ -34,6 +45,12 @@
 	<table id="dataview-table" class="table table-striped">
 		<thead id="dataview-table-header">
 			<tr id="dataview-table-header-row">
+				<th class="th-sortable" data-sort="id">
+					id
+				</th>
+				<th class="th-sortable" data-sort="string">
+					string
+				</th>
 			</tr>
 		</thead>
 		<tbody id="dataview-table-items">
@@ -44,6 +61,12 @@
 
 <template name="TestTestViewTableItems">
 	<tr id="dataview-table-items-row">
+		<td>
+			{{id}}
+		</td>
+		<td>
+			{{string}}
+		</td>
 	</tr>
 </template>
 

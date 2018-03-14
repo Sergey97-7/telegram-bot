@@ -314,15 +314,15 @@
 		},
 		{
 			"path": "client/views/test/test.html",
-			"checksum": "74de2d125cc43f3db662cb6f7bf901be4a40690b"
+			"checksum": "e75b60f43596bf8a04cf2fefd077304a2bef6eef"
 		},
 		{
 			"path": "client/views/test/test.js",
-			"checksum": "ec01b2990d0685aeb47f954d9ad65f9446b8ba3b"
+			"checksum": "432674c1ed72cd62d100cdc12091ff57568844c3"
 		},
 		{
 			"path": "client/views/test/test_controller.js",
-			"checksum": "34edce5564df2a9d1b478fcc050d5909af572d12"
+			"checksum": "e6b13a6d1ddba53342066b741a1924b39ec34269"
 		},
 		{
 			"path": "client/views/test/insert/insert.html",

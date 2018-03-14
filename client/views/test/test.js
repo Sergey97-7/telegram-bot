@@ -265,7 +265,7 @@ Template.TestTestViewTableItems.events({
 	"click td": function(e, t) {
 		e.preventDefault();
 		
-		Router.go("test.details", mergeObjects(Router.currentRouteParams(), {testId: this_id}));
+		Router.go("test.details", mergeObjects(Router.currentRouteParams(), {testId: this._id}));
 		return false;
 	},
 
@@ -318,7 +318,7 @@ Template.TestTestViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		Router.go("test.edit", mergeObjects(Router.currentRouteParams(), {testId: this_id}));
+		Router.go("test.edit", mergeObjects(Router.currentRouteParams(), {testId: this._id}));
 		return false;
 	}
 });

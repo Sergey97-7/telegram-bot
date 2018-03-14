@@ -242,11 +242,11 @@
 		},
 		{
 			"path": "client/views/bot/bot.html",
-			"checksum": "96c898b0ae905fe5a24ae1ab06f5a3279f6fe238"
+			"checksum": "dc79d085f614a8c79880376de925fc065349bf2a"
 		},
 		{
 			"path": "client/views/bot/bot.js",
-			"checksum": "2075e2fc5650a2496efa906e890c5ff6f4872f1e"
+			"checksum": "e564f9119cbf756cf83ef919554d6f38197062e2"
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
@@ -254,7 +254,7 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "41cd6c74f8dcb03a4b356c843d906fb45c5316d3"
+			"checksum": "b8b306cdd27559832a1290e9a1241c58d40ba0cb"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
@@ -262,11 +262,11 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert_controller.js",
-			"checksum": "d335768ce05e5746acf3d362c7cdbf8b83fd36c7"
+			"checksum": "b4bcaa3ce7caccdafdb716c590577426a30c70a3"
 		},
 		{
 			"path": "client/views/bot/details/details.html",
-			"checksum": "c3fa5feb217e7af025c7ce12686243b5a33e0389"
+			"checksum": "77971d5b079601de8f92f9809ce0e29d80a35e46"
 		},
 		{
 			"path": "client/views/bot/details/details.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "d14904980dd856c78a468a48fc54561917dd2197"
+			"checksum": "2d2a8de270d610ba121cd6b119bb32e132513642"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",
@@ -286,7 +286,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit_controller.js",
-			"checksum": "5aa1f09c13cd95cd9f9d1c90fe006dba5ffdc22d"
+			"checksum": "837f348d8a38c30d2f830d5e4a7a8d0bcc3539c4"
 		},
 		{
 			"path": "client/views/log/log.html",
@@ -410,7 +410,7 @@
 		},
 		{
 			"path": "both/joins/joins.js",
-			"checksum": "11175fb0687d9cd91581cd32794c5c85a5bacd8a"
+			"checksum": "097aff4d0c5f75d02381039c7bedfa44c9cf22f8"
 		},
 		{
 			"path": "lib/string_utils.js",

@@ -101,6 +101,9 @@
 				</label>
 				<div class="input-div">
 					<select multiple="multiple" class="form-control " name="next_q" data-type="array">
+						{{#each messages}}
+						<option value="{{_id}}">							{{bot_msg}}</option>
+						{{/each}}
 					</select>
 					<span id="help-text" class="help-block">
 					</span>

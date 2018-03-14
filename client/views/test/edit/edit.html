@@ -56,7 +56,7 @@
 				<div class="input-div">
 					<select multiple="multiple" class="form-control " name="questionId" data-type="array">
 						{{#each messages}}
-						<option value="{{_id}}" {{optionIsSelected ../test_details.questionId _id}}>							{{bot_msg}}</option>
+						<option value="{{}}" {{optionIsSelected ../test_details.questionId }}>							{{}}</option>
 						{{/each}}
 					</select>
 					<span id="help-text" class="help-block">

@@ -1,14 +1,14 @@
 var pageSession = new ReactiveDict();
 
-Template.Bot.onCreated(function() {
+Template.Log.onCreated(function() {
 	
 });
 
-Template.Bot.onDestroyed(function() {
+Template.Log.onDestroyed(function() {
 	
 });
 
-Template.Bot.onRendered(function() {
+Template.Log.onRendered(function() {
 	
 	Meteor.defer(function() {
 		globalOnRendered();
@@ -16,22 +16,22 @@ Template.Bot.onRendered(function() {
 	});
 });
 
-Template.Bot.events({
+Template.Log.events({
 	
 });
 
-Template.Bot.helpers({
+Template.Log.helpers({
 	
 });
 
-var BotNewDataViewItems = function(cursor) {
+var LogLogViewItems = function(cursor) {
 	if(!cursor) {
 		return [];
 	}
 
-	var searchString = pageSession.get("BotNewDataViewSearchString");
-	var sortBy = pageSession.get("BotNewDataViewSortBy");
-	var sortAscending = pageSession.get("BotNewDataViewSortAscending");
+	var searchString = pageSession.get("LogLogViewSearchString");
+	var sortBy = pageSession.get("LogLogViewSortBy");
+	var sortAscending = pageSession.get("LogLogViewSortAscending");
 	if(typeof(sortAscending) == "undefined") sortAscending = true;
 
 	var raw = cursor.fetch();
@@ -43,7 +43,7 @@ var BotNewDataViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["Id", "bot_msg", "answer_type", "answer_var", "first_question", "ques", "question", "tests_empty"];
+		var searchFields = ["chat_id", "user_name", "last_question", "last_answer", "time"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {
@@ -71,8 +71,8 @@ var BotNewDataViewItems = function(cursor) {
 	return filtered;
 };
 
-var BotNewDataViewExport = function(cursor, fileType) {
-	var data = BotNewDataViewItems(cursor);
+var LogLogViewExport = function(cursor, fileType) {
+	var data = LogLogViewItems(cursor);
 	var exportFields = [];
 
 	var str = exportArrayOfObjects(data, exportFields, fileType);
@@ -82,20 +82,20 @@ var BotNewDataViewExport = function(cursor, fileType) {
 	downloadLocalResource(str, filename, "application/octet-stream");
 }
 
-Template.BotNewDataView.onCreated(function() {
+Template.LogLogView.onCreated(function() {
 	
 });
 
-Template.BotNewDataView.onDestroyed(function() {
+Template.LogLogView.onDestroyed(function() {
 	
 });
 
-Template.BotNewDataView.onRendered(function() {
-	pageSession.set("BotNewDataViewStyle", "table");
+Template.LogLogView.onRendered(function() {
+	pageSession.set("LogLogViewStyle", "table");
 	
 });
 
-Template.BotNewDataView.events({
+Template.LogLogView.events({
 	"submit #dataview-controls": function(e, t) {
 		return false;
 	},
@@ -108,7 +108,7 @@ Template.BotNewDataView.events({
 			if(searchInput) {
 				searchInput.focus();
 				var searchString = searchInput.val();
-				pageSession.set("BotNewDataViewSearchString", searchString);
+				pageSession.set("LogLogViewSearchString", searchString);
 			}
 
 		}
@@ -124,7 +124,7 @@ Template.BotNewDataView.events({
 				var searchInput = form.find("#dataview-search-input");
 				if(searchInput) {
 					var searchString = searchInput.val();
-					pageSession.set("BotNewDataViewSearchString", searchString);
+					pageSession.set("LogLogViewSearchString", searchString);
 				}
 
 			}
@@ -139,7 +139,7 @@ Template.BotNewDataView.events({
 				var searchInput = form.find("#dataview-search-input");
 				if(searchInput) {
 					searchInput.val("");
-					pageSession.set("BotNewDataViewSearchString", "");
+					pageSession.set("LogLogViewSearchString", "");
 				}
 
 			}
@@ -151,121 +151,121 @@ Template.BotNewDataView.events({
 
 	"click #dataview-insert-button": function(e, t) {
 		e.preventDefault();
-		Router.go("bot.insert", mergeObjects(Router.currentRouteParams(), {}));
+		/**/
 	},
 
 	"click #dataview-export-default": function(e, t) {
 		e.preventDefault();
-		BotNewDataViewExport(this.messages, "csv");
+		LogLogViewExport(this.logs, "csv");
 	},
 
 	"click #dataview-export-csv": function(e, t) {
 		e.preventDefault();
-		BotNewDataViewExport(this.messages, "csv");
+		LogLogViewExport(this.logs, "csv");
 	},
 
 	"click #dataview-export-tsv": function(e, t) {
 		e.preventDefault();
-		BotNewDataViewExport(this.messages, "tsv");
+		LogLogViewExport(this.logs, "tsv");
 	},
 
 	"click #dataview-export-json": function(e, t) {
 		e.preventDefault();
-		BotNewDataViewExport(this.messages, "json");
+		LogLogViewExport(this.logs, "json");
 	}
 
 	
 });
 
-Template.BotNewDataView.helpers({
+Template.LogLogView.helpers({
 
 	"insertButtonClass": function() {
-		return Question.userCanInsert(Meteor.userId(), {}) ? "" : "hidden";
+		return Log.userCanInsert(Meteor.userId(), {}) ? "" : "hidden";
 	},
 
 	"isEmpty": function() {
-		return !this.messages || this.messages.count() == 0;
+		return !this.logs || this.logs.count() == 0;
 	},
 	"isNotEmpty": function() {
-		return this.messages && this.messages.count() > 0;
+		return this.logs && this.logs.count() > 0;
 	},
 	"isNotFound": function() {
-		return this.messages && pageSession.get("BotNewDataViewSearchString") && BotNewDataViewItems(this.messages).length == 0;
+		return this.logs && pageSession.get("LogLogViewSearchString") && LogLogViewItems(this.logs).length == 0;
 	},
 	"searchString": function() {
-		return pageSession.get("BotNewDataViewSearchString");
+		return pageSession.get("LogLogViewSearchString");
 	},
 	"viewAsTable": function() {
-		return pageSession.get("BotNewDataViewStyle") == "table";
+		return pageSession.get("LogLogViewStyle") == "table";
 	},
 	"viewAsBlog": function() {
-		return pageSession.get("BotNewDataViewStyle") == "blog";
+		return pageSession.get("LogLogViewStyle") == "blog";
 	},
 	"viewAsList": function() {
-		return pageSession.get("BotNewDataViewStyle") == "list";
+		return pageSession.get("LogLogViewStyle") == "list";
 	},
 	"viewAsGallery": function() {
-		return pageSession.get("BotNewDataViewStyle") == "gallery";
+		return pageSession.get("LogLogViewStyle") == "gallery";
 	}
 
 	
 });
 
 
-Template.BotNewDataViewTable.onCreated(function() {
+Template.LogLogViewTable.onCreated(function() {
 	
 });
 
-Template.BotNewDataViewTable.onDestroyed(function() {
+Template.LogLogViewTable.onDestroyed(function() {
 	
 });
 
-Template.BotNewDataViewTable.onRendered(function() {
+Template.LogLogViewTable.onRendered(function() {
 	
 });
 
-Template.BotNewDataViewTable.events({
+Template.LogLogViewTable.events({
 	"click .th-sortable": function(e, t) {
 		e.preventDefault();
-		var oldSortBy = pageSession.get("BotNewDataViewSortBy");
+		var oldSortBy = pageSession.get("LogLogViewSortBy");
 		var newSortBy = $(e.target).attr("data-sort");
 
-		pageSession.set("BotNewDataViewSortBy", newSortBy);
+		pageSession.set("LogLogViewSortBy", newSortBy);
 		if(oldSortBy == newSortBy) {
-			var sortAscending = pageSession.get("BotNewDataViewSortAscending") || false;
-			pageSession.set("BotNewDataViewSortAscending", !sortAscending);
+			var sortAscending = pageSession.get("LogLogViewSortAscending") || false;
+			pageSession.set("LogLogViewSortAscending", !sortAscending);
 		} else {
-			pageSession.set("BotNewDataViewSortAscending", true);
+			pageSession.set("LogLogViewSortAscending", true);
 		}
 	}
 });
 
-Template.BotNewDataViewTable.helpers({
+Template.LogLogViewTable.helpers({
 	"tableItems": function() {
-		return BotNewDataViewItems(this.messages);
+		return LogLogViewItems(this.logs);
 	}
 });
 
 
-Template.BotNewDataViewTableItems.onCreated(function() {
+Template.LogLogViewTableItems.onCreated(function() {
 	
 });
 
-Template.BotNewDataViewTableItems.onDestroyed(function() {
+Template.LogLogViewTableItems.onDestroyed(function() {
 	
 });
 
-Template.BotNewDataViewTableItems.onRendered(function() {
+Template.LogLogViewTableItems.onRendered(function() {
 	
 });
 
-Template.BotNewDataViewTableItems.events({
+Template.LogLogViewTableItems.events({
 	
 
 	"click td": function(e, t) {
 		e.preventDefault();
 		
-		Router.go("bot.details", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
+		Router.go("log.details", mergeObjects(Router.currentRouteParams(), {logId: this._id}));
 		return false;
 	},
 
@@ -280,7 +280,7 @@ Template.BotNewDataViewTableItems.events({
 		var values = {};
 		values[fieldName] = !this[fieldName];
 
-		Meteor.call("questionUpdate", this._id, values, function(err, res) {
+		Meteor.call("logUpdate", this._id, values, function(err, res) {
 			if(err) {
 				alert(err.message);
 			}
@@ -301,7 +301,7 @@ Template.BotNewDataViewTableItems.events({
 					label: "Yes",
 					className: "btn-success",
 					callback: function() {
-						Meteor.call("questionRemove", me._id, function(err, res) {
+						Meteor.call("logRemove", me._id, function(err, res) {
 							if(err) {
 								alert(err.message);
 							}
@@ -318,20 +318,20 @@ Template.BotNewDataViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		Router.go("bot.edit", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
+		/**/
 		return false;
 	}
 });
 
-Template.BotNewDataViewTableItems.helpers({
+Template.LogLogViewTableItems.helpers({
 	
 
 	"checked": function(value) { return value ? "checked" : "" }, 
 	"editButtonClass": function() {
-		return Question.userCanUpdate(Meteor.userId(), this) ? "" : "hidden";
+		return Log.userCanUpdate(Meteor.userId(), this) ? "" : "hidden";
 	},
 
 	"deleteButtonClass": function() {
-		return Question.userCanRemove(Meteor.userId(), this) ? "" : "hidden";
+		return Log.userCanRemove(Meteor.userId(), this) ? "" : "hidden";
 	}
 });

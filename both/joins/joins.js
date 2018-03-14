@@ -1,3 +1,3 @@
 // Question
-Question.join(Question, "ques", "question", []);
+Question.join(Question, "ques", "", []);
 

@@ -2,7 +2,7 @@
 	"output_files": [
 		{
 			"path": "client/views/router.js",
-			"checksum": "4caa2341457925d961008667d627ecff5186bdc5"
+			"checksum": "e6d69f0fb569c242b80211357dc333cbc968022d"
 		},
 		{
 			"path": "server/controllers/router.js",
@@ -54,7 +54,7 @@
 		},
 		{
 			"path": "client/views/layout/layout.html",
-			"checksum": "cfba501696b6baabe149b7ea8e63cd6b9c97c497"
+			"checksum": "e9beb7083c1338abfe21082618f8b075598b256f"
 		},
 		{
 			"path": "client/views/layout/layout.js",
@@ -242,11 +242,11 @@
 		},
 		{
 			"path": "client/views/bot/bot.html",
-			"checksum": "48351f3722151fff4b26bdad6c43a56e21fb3b25"
+			"checksum": "d881bb829f482e77719223405406a2fb38e61f28"
 		},
 		{
 			"path": "client/views/bot/bot.js",
-			"checksum": "511230a3ba2045bfa523652280760b1b50efb251"
+			"checksum": "98bc7b5a92a6af75eec91d2d31f41d42b0113513"
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
@@ -254,7 +254,7 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "25a53a6ab3b2d5d77d4a8b18a39d4c4b9b943a3d"
+			"checksum": "784801f226934839522928a7673c2b4c6a5e11bf"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
@@ -266,7 +266,7 @@
 		},
 		{
 			"path": "client/views/bot/details/details.html",
-			"checksum": "e256e43e87ae479e1da20df4d44cc900db4a7056"
+			"checksum": "b853669eb68b6e2898c6b658b5e2deb7fd092720"
 		},
 		{
 			"path": "client/views/bot/details/details.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "c12c20eb37ce82dc743dfd9265ba99fc9981d803"
+			"checksum": "7cef91f3a1353675bbb62e3d53bce6d067374f2e"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",
@@ -287,6 +287,78 @@
 		{
 			"path": "client/views/bot/edit/edit_controller.js",
 			"checksum": "5aa1f09c13cd95cd9f9d1c90fe006dba5ffdc22d"
+		},
+		{
+			"path": "client/views/log/log.html",
+			"checksum": "47d2471534b4e2d16cda3939552aad199b5a3105"
+		},
+		{
+			"path": "client/views/log/log.js",
+			"checksum": "0d2dea67311e782bb88928d242f16551511d4fe1"
+		},
+		{
+			"path": "client/views/log/log_controller.js",
+			"checksum": "662a34f9d8f37512ff409953b5a510c3fad71f26"
+		},
+		{
+			"path": "client/views/log/details/details.html",
+			"checksum": "0dfd0d7b76da7d0536ca06c10cc39885b32773ef"
+		},
+		{
+			"path": "client/views/log/details/details.js",
+			"checksum": "cc9fb8ae45faa4b7bab89fcb028539ef85d6ed01"
+		},
+		{
+			"path": "client/views/log/details/details_controller.js",
+			"checksum": "44af7f4f747f8b7f2970fe8dd476615659391536"
+		},
+		{
+			"path": "client/views/test/test.html",
+			"checksum": "74de2d125cc43f3db662cb6f7bf901be4a40690b"
+		},
+		{
+			"path": "client/views/test/test.js",
+			"checksum": "ec01b2990d0685aeb47f954d9ad65f9446b8ba3b"
+		},
+		{
+			"path": "client/views/test/test_controller.js",
+			"checksum": "34edce5564df2a9d1b478fcc050d5909af572d12"
+		},
+		{
+			"path": "client/views/test/insert/insert.html",
+			"checksum": "9b0a29155e56a98ce3522e28cd861cdd53d11049"
+		},
+		{
+			"path": "client/views/test/insert/insert.js",
+			"checksum": "d429d7a82af9140954dbdcdc45dc983365a5a52d"
+		},
+		{
+			"path": "client/views/test/insert/insert_controller.js",
+			"checksum": "20f9d450630221542ae9c32e6b63e9597ca689ce"
+		},
+		{
+			"path": "client/views/test/details/details.html",
+			"checksum": "78eb5e43e65a87d84c690bed60e8bfb19d12b2e8"
+		},
+		{
+			"path": "client/views/test/details/details.js",
+			"checksum": "a5f4f8d3e4e2efd55d85803eda25ab180ae7373a"
+		},
+		{
+			"path": "client/views/test/details/details_controller.js",
+			"checksum": "f4b155858a4b669c9253648f7a968ef74d57d8df"
+		},
+		{
+			"path": "client/views/test/edit/edit.html",
+			"checksum": "4a7132ede92fb485c4ef9e4c8ae5f095f81ff448"
+		},
+		{
+			"path": "client/views/test/edit/edit.js",
+			"checksum": "bc6c0a5bfe786b372eae4d612452ccb3332b3b6c"
+		},
+		{
+			"path": "client/views/test/edit/edit_controller.js",
+			"checksum": "c2f1a024b2a7731a3231682e3f78ce5e96b7ec34"
 		},
 		{
 			"path": "both/collections/question.js",
@@ -318,11 +390,27 @@
 		},
 		{
 			"path": "server/publish/log.js",
-			"checksum": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+			"checksum": "895f22d626476cf33a3b372451e20069ceeac163"
+		},
+		{
+			"path": "both/collections/test.js",
+			"checksum": "056119f8965b9866e0334d80f42836a1dbbc15be"
+		},
+		{
+			"path": "server/methods/test.js",
+			"checksum": "07c5b44f7fd43cfccd2c411ae13b2968314456b0"
+		},
+		{
+			"path": "server/collections/test.js",
+			"checksum": "eeffe000088de0074b6994d1c28b087ffdcc2f3f"
+		},
+		{
+			"path": "server/publish/test.js",
+			"checksum": "c67f088ae3d8a1a635a4c9d256cdd95854a4e61e"
 		},
 		{
 			"path": "both/joins/joins.js",
-			"checksum": "f47e607a6cd483990ef6871cf260c0691239276d"
+			"checksum": "5be8accdf362911567ee1935f57c638e52711987"
 		},
 		{
 			"path": "lib/string_utils.js",
@@ -538,11 +626,17 @@
 		"client/views/home_public/",
 		"client/views/layout/",
 		"client/views/loading/",
+		"client/views/log/",
+		"client/views/log/details/",
 		"client/views/login/",
 		"client/views/logout/",
 		"client/views/not_found/",
 		"client/views/register/",
 		"client/views/reset_password/",
+		"client/views/test/",
+		"client/views/test/details/",
+		"client/views/test/edit/",
+		"client/views/test/insert/",
 		"client/views/user_settings/",
 		"client/views/user_settings/change_pass/",
 		"client/views/user_settings/profile/",

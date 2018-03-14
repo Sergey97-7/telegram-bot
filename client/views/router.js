@@ -27,7 +27,13 @@ Router.privateRoutes = [
 	"bot",
 	"bot.insert",
 	"bot.details",
-	"bot.edit"
+	"bot.edit",
+	"log",
+	"log.details",
+	"test",
+	"test.insert",
+	"test.details",
+	"test.edit"
 ];
 
 Router.freeRoutes = [
@@ -88,4 +94,10 @@ Router.map(function () {
 	this.route("/bot/insert", {name: "bot.insert", title: "", controller: "BotInsertController"});
 	this.route("/bot/details/:botId", {name: "bot.details", title: "", controller: "BotDetailsController"});
 	this.route("/bot/edit/:botId", {name: "bot.edit", title: "", controller: "BotEditController"});
+	this.route("/log", {name: "log", title: "", controller: "LogController"});
+	this.route("/log/details/:logId", {name: "log.details", title: "", controller: "LogDetailsController"});
+	this.route("/test", {name: "test", title: "", controller: "TestController"});
+	this.route("/test/insert", {name: "test.insert", title: "", controller: "TestInsertController"});
+	this.route("/test/details/:testId", {name: "test.details", title: "", controller: "TestDetailsController"});
+	this.route("/test/edit/:testId", {name: "test.edit", title: "", controller: "TestEditController"});
 });

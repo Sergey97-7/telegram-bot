@@ -1,0 +1,90 @@
+<template name="Log">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+			</div>
+		</div>
+		{{> LogLogView}}
+	</div>
+</template>
+
+<template name="LogLogView">
+	<div id="log-log-view" class="">
+		<form id="dataview-controls" class="form-inline">
+			<div id="dataview-controls-search">
+				<div id="dataview-controls-search-group" class="input-group">
+					<input type="text" class="form-control" id="dataview-search-input" placeholder="Search" name="search" value="{{searchString}}" autofocus="autofocus">
+					<span class="input-group-btn">
+						<button type="button" id="dataview-search-button" class="btn btn-primary">
+							<span class="fa fa-search">
+							</span>
+						</button>
+					</span>
+				</div>
+			</div>
+		</form>
+		{{#if isNotEmpty}}
+			{{#if isNotFound}}
+		<div class="alert alert-warning">
+			"{{searchString}}" not found.
+		</div>
+		{{else}}
+		<div id="dataview-data">
+			{{#if viewAsTable}} {{> LogLogViewTable}} {{/if}}
+		</div>
+		{{/if}}
+		{{else}}
+		<div class="alert alert-info">
+			Empty.
+		</div>
+		{{/if}}
+	</div>
+</template>
+
+<template name="LogLogViewTable">
+	<table id="dataview-table" class="table table-striped table-hover">
+		<thead id="dataview-table-header">
+			<tr id="dataview-table-header-row">
+				<th class="th-sortable" data-sort="chat_id">
+					chat_id
+				</th>
+				<th class="th-sortable" data-sort="user_name">
+					user_name
+				</th>
+				<th class="th-sortable" data-sort="last_question">
+					last_question
+				</th>
+				<th class="th-sortable" data-sort="last_answer">
+					last_answer
+				</th>
+				<th class="th-sortable" data-sort="time">
+					time
+				</th>
+			</tr>
+		</thead>
+		<tbody id="dataview-table-items">
+			{{#each tableItems}} {{> LogLogViewTableItems}} {{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="LogLogViewTableItems">
+	<tr id="dataview-table-items-row">
+		<td>
+			{{chat_id}}
+		</td>
+		<td>
+			{{user_name}}
+		</td>
+		<td>
+			{{last_question}}
+		</td>
+		<td>
+			{{last_answer}}
+		</td>
+		<td>
+			{{time}}
+		</td>
+	</tr>
+</template>
+

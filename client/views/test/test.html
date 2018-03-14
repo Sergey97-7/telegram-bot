@@ -1,0 +1,49 @@
+<template name="Test">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+			</div>
+		</div>
+		{{> TestTestView}}
+	</div>
+</template>
+
+<template name="TestTestView">
+	<div id="test-test-view" class="">
+		<form id="dataview-controls" class="form-inline">
+		</form>
+		{{#if isNotEmpty}}
+			{{#if isNotFound}}
+		<div class="alert alert-warning">
+			"{{searchString}}" not found.
+		</div>
+		{{else}}
+		<div id="dataview-data">
+			{{#if viewAsTable}} {{> TestTestViewTable}} {{/if}}
+		</div>
+		{{/if}}
+		{{else}}
+		<div class="alert alert-info">
+			Empty.
+		</div>
+		{{/if}}
+	</div>
+</template>
+
+<template name="TestTestViewTable">
+	<table id="dataview-table" class="table table-striped">
+		<thead id="dataview-table-header">
+			<tr id="dataview-table-header-row">
+			</tr>
+		</thead>
+		<tbody id="dataview-table-items">
+			{{#each tableItems}} {{> TestTestViewTableItems}} {{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="TestTestViewTableItems">
+	<tr id="dataview-table-items-row">
+	</tr>
+</template>
+

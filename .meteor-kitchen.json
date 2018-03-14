@@ -246,7 +246,7 @@
 		},
 		{
 			"path": "client/views/bot/bot.js",
-			"checksum": "773fa4d46b67260cecf987dfa88cef07a6cddedd"
+			"checksum": "2075e2fc5650a2496efa906e890c5ff6f4872f1e"
 		},
 		{
 			"path": "client/views/bot/bot_controller.js",
@@ -254,7 +254,7 @@
 		},
 		{
 			"path": "client/views/bot/insert/insert.html",
-			"checksum": "559e5f8082aae21a09babe54d2779de396432b7b"
+			"checksum": "41cd6c74f8dcb03a4b356c843d906fb45c5316d3"
 		},
 		{
 			"path": "client/views/bot/insert/insert.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "1aae68b990f11d43daa040a6cbf91f3bc101f40f"
+			"checksum": "d14904980dd856c78a468a48fc54561917dd2197"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",
@@ -326,7 +326,7 @@
 		},
 		{
 			"path": "client/views/test/insert/insert.html",
-			"checksum": "200c94d27e6e87a6e1333619c7cf816c9f8fdcb4"
+			"checksum": "eafbba20cd1fc672c9c10bb232d7c3d3b74f024a"
 		},
 		{
 			"path": "client/views/test/insert/insert.js",
@@ -350,7 +350,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
-			"checksum": "c93a8c04cc20ed6b90dccfe8598311fc9a495007"
+			"checksum": "1537e78a9e9e5fed042c268dd92a430d466783bb"
 		},
 		{
 			"path": "client/views/test/edit/edit.js",
@@ -374,7 +374,7 @@
 		},
 		{
 			"path": "server/publish/question.js",
-			"checksum": "2489066613e59ea10fd5a554863a9454b0c0b1eb"
+			"checksum": "6dbb541f26f9269e9f03b90e6c61531bbbbdbd16"
 		},
 		{
 			"path": "both/collections/log.js",
@@ -410,7 +410,7 @@
 		},
 		{
 			"path": "both/joins/joins.js",
-			"checksum": "3bb0af6544bf4c758ad53ec29301864eab8a82c0"
+			"checksum": "11175fb0687d9cd91581cd32794c5c85a5bacd8a"
 		},
 		{
 			"path": "lib/string_utils.js",

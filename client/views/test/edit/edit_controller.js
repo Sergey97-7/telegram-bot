@@ -19,7 +19,7 @@ this.TestEditController = RouteController.extend({
 		
 
 		var subs = [
-			Meteor.subscribe("messages"),
+			Meteor.subscribe("tests"),
 			Meteor.subscribe("test_details", this.params.testId)
 		];
 		var ready = true;
@@ -35,7 +35,7 @@ this.TestEditController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			messages: Question.find({}, {sort:[["Id","asc"]]}),
+			tests: Test.find({}, {}),
 			test_details: Test.findOne({_id:this.params.testId}, {})
 		};
 		

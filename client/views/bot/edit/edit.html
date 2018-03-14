@@ -97,11 +97,7 @@
 					question
 				</label>
 				<div class="input-div">
-					<select class="form-control " name="ques" data-type="string">
-						{{#each messages}}
-						<option value="{{_id}}" {{optionIsSelected ../message_details.ques _id}}>							{{Id}}</option>
-						{{/each}}
-					</select>
+					<input type="text" name="ques" value="{{message_details.ques}}" class="form-control " data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

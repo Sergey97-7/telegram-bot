@@ -10,6 +10,9 @@
 
 <template name="TestEditEditTest">
 	<div id="test-edit-edit-test" class="">
+		<h2 id="component-title">
+			edit
+		</h2>
 		<form role="form">
 			{{#if errorMessage}}
 			<div class="alert alert-warning">
@@ -24,6 +27,7 @@
 			{{/if}}
 			<div class="form-group  field-id">
 				<label for="id">
+					int
 				</label>
 				<div class="input-div">
 					<input type="text" name="id" value="{{test_details.id}}" class="form-control " autofocus="autofocus" data-type="integer">
@@ -35,6 +39,7 @@
 			</div>
 			<div class="form-group  field-string">
 				<label for="string">
+					str
 				</label>
 				<div class="input-div">
 					<input type="text" name="string" value="{{test_details.string}}" class="form-control " data-type="string">

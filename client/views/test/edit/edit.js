@@ -73,7 +73,7 @@ Template.TestEditEditTest.events({
 		var self = this;
 
 		function submitAction(result, msg) {
-			var testEditEditTestMode = "insert";
+			var testEditEditTestMode = "update";
 			if(!t.find("#form-cancel-button")) {
 				switch(testEditEditTestMode) {
 					case "insert": {
@@ -107,7 +107,7 @@ Template.TestEditEditTest.events({
 			function(values) {
 				
 
-				Meteor.call("testInsert", values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
+				Meteor.call("testUpdate", t.data.test_details._id, values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
 			}
 		);
 

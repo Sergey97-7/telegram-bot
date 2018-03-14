@@ -73,7 +73,7 @@ Template.TestDetailsDetailsTest.events({
 		var self = this;
 
 		function submitAction(result, msg) {
-			var testDetailsDetailsTestMode = "insert";
+			var testDetailsDetailsTestMode = "read_only";
 			if(!t.find("#form-cancel-button")) {
 				switch(testDetailsDetailsTestMode) {
 					case "insert": {
@@ -107,7 +107,7 @@ Template.TestDetailsDetailsTest.events({
 			function(values) {
 				
 
-				Meteor.call("testInsert", values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
+				
 			}
 		);
 

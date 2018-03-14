@@ -151,7 +151,7 @@ Template.TestTestView.events({
 
 	"click #dataview-insert-button": function(e, t) {
 		e.preventDefault();
-		/**/
+		Router.go("test.insert", mergeObjects(Router.currentRouteParams(), {}));
 	},
 
 	"click #dataview-export-default": function(e, t) {
@@ -265,7 +265,7 @@ Template.TestTestViewTableItems.events({
 	"click td": function(e, t) {
 		e.preventDefault();
 		
-		/**/
+		Router.go("test.details", mergeObjects(Router.currentRouteParams(), {testId: this_id}));
 		return false;
 	},
 
@@ -318,7 +318,7 @@ Template.TestTestViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		/**/
+		Router.go("test.edit", mergeObjects(Router.currentRouteParams(), {testId: this_id}));
 		return false;
 	}
 });

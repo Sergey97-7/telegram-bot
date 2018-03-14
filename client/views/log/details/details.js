@@ -73,7 +73,7 @@ Template.LogDetailsDetailsForm.events({
 		var self = this;
 
 		function submitAction(result, msg) {
-			var logDetailsDetailsFormMode = "insert";
+			var logDetailsDetailsFormMode = "read_only";
 			if(!t.find("#form-cancel-button")) {
 				switch(logDetailsDetailsFormMode) {
 					case "insert": {
@@ -107,7 +107,7 @@ Template.LogDetailsDetailsForm.events({
 			function(values) {
 				
 
-				Meteor.call("logInsert", values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
+				
 			}
 		);
 

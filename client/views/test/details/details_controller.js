@@ -34,7 +34,7 @@ this.TestDetailsController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			test_details: Test.find({_id:this.params.testId}, {})
+			test_details: Test.findOne({_id:this.params.testId}, {})
 		};
 		
 

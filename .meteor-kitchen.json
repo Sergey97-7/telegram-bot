@@ -334,7 +334,7 @@
 		},
 		{
 			"path": "client/views/test/insert/insert_controller.js",
-			"checksum": "20f9d450630221542ae9c32e6b63e9597ca689ce"
+			"checksum": "1b7985f13fe6dd9fe9bb18a8bce46717e768c8ee"
 		},
 		{
 			"path": "client/views/test/details/details.html",
@@ -346,7 +346,7 @@
 		},
 		{
 			"path": "client/views/test/details/details_controller.js",
-			"checksum": "f4b155858a4b669c9253648f7a968ef74d57d8df"
+			"checksum": "299cd1ecdf73e14c4e95c2be9371ebc221a94430"
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
@@ -358,7 +358,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit_controller.js",
-			"checksum": "c2f1a024b2a7731a3231682e3f78ce5e96b7ec34"
+			"checksum": "e7f8131ca0a367fda4b43d21d58f3c0f156350aa"
 		},
 		{
 			"path": "both/collections/question.js",
@@ -406,7 +406,7 @@
 		},
 		{
 			"path": "server/publish/test.js",
-			"checksum": "c67f088ae3d8a1a635a4c9d256cdd95854a4e61e"
+			"checksum": "b0f59863d7684bf00a410a4a8414e36d87871904"
 		},
 		{
 			"path": "both/joins/joins.js",

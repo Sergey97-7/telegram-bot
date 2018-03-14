@@ -34,7 +34,7 @@ this.TestInsertController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			tests_empty: Test.find({_id:null}, {})
+			tests_empty: Test.findOne({_id:null}, {})
 		};
 		
 

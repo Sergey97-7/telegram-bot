@@ -19,6 +19,7 @@ this.BotEditController = RouteController.extend({
 		
 
 		var subs = [
+			Meteor.subscribe("messages"),
 			Meteor.subscribe("message_details", this.params.botId)
 		];
 		var ready = true;
@@ -34,6 +35,7 @@ this.BotEditController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
+			messages: Question.find({}, {}),
 			message_details: Question.findOne({_id:this.params.botId}, {})
 		};
 		

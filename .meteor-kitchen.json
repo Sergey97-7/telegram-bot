@@ -314,11 +314,11 @@
 		},
 		{
 			"path": "client/views/test/test.html",
-			"checksum": "6436036d83de9f2d83b74cb8cd772afe918f63a8"
+			"checksum": "530406a89abe3b57f15476d23e031258193d2525"
 		},
 		{
 			"path": "client/views/test/test.js",
-			"checksum": "b8fc1716d16af5c7ea43ea1b44899fc09b486ca6"
+			"checksum": "ab5a37df47f1e8802adfbae4b8e9ca6429233a68"
 		},
 		{
 			"path": "client/views/test/test_controller.js",
@@ -326,7 +326,7 @@
 		},
 		{
 			"path": "client/views/test/insert/insert.html",
-			"checksum": "e36228f3e44373df4050b44d297a78bc54774ec4"
+			"checksum": "eda29dcd6dfca340b44ab33504086cdbc0ae18a6"
 		},
 		{
 			"path": "client/views/test/insert/insert.js",
@@ -334,11 +334,11 @@
 		},
 		{
 			"path": "client/views/test/insert/insert_controller.js",
-			"checksum": "1b7985f13fe6dd9fe9bb18a8bce46717e768c8ee"
+			"checksum": "e304761d269f70f5c1c033daa7a3c9271bae7aae"
 		},
 		{
 			"path": "client/views/test/details/details.html",
-			"checksum": "d2344d6e7c51d5be1ade71eda71d73707827aba8"
+			"checksum": "3bc689643a554fd065484bf7d3c796c2da70754c"
 		},
 		{
 			"path": "client/views/test/details/details.js",
@@ -350,7 +350,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
-			"checksum": "53217817ba39f98205f38edafb22f9035c0f80d6"
+			"checksum": "8cf3ff6356c0c01297bba6ff86fbca5f3524bc77"
 		},
 		{
 			"path": "client/views/test/edit/edit.js",
@@ -358,7 +358,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit_controller.js",
-			"checksum": "e7f8131ca0a367fda4b43d21d58f3c0f156350aa"
+			"checksum": "235b00a3e66a911aca1418baf081e664e9fb914f"
 		},
 		{
 			"path": "both/collections/question.js",
@@ -406,11 +406,11 @@
 		},
 		{
 			"path": "server/publish/test.js",
-			"checksum": "b0f59863d7684bf00a410a4a8414e36d87871904"
+			"checksum": "f71f2110b9ea0b321d7b68624bdf22425d88a3b7"
 		},
 		{
 			"path": "both/joins/joins.js",
-			"checksum": "5be8accdf362911567ee1935f57c638e52711987"
+			"checksum": "4fa5d51021cdab4b410f57bc4d2b8283034efbf3"
 		},
 		{
 			"path": "lib/string_utils.js",

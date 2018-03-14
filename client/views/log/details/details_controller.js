@@ -34,7 +34,7 @@ this.LogDetailsController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			log_details: Log.find({_id:this.params.logId}, {})
+			log_details: Log.findOne({_id:this.params.logId}, {})
 		};
 		
 

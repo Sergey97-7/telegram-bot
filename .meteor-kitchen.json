@@ -310,7 +310,7 @@
 		},
 		{
 			"path": "client/views/log/details/details_controller.js",
-			"checksum": "44af7f4f747f8b7f2970fe8dd476615659391536"
+			"checksum": "bb1b18bc9b402e3b82115900d09a6fc2254de1fc"
 		},
 		{
 			"path": "client/views/test/test.html",
@@ -390,7 +390,7 @@
 		},
 		{
 			"path": "server/publish/log.js",
-			"checksum": "895f22d626476cf33a3b372451e20069ceeac163"
+			"checksum": "7c81e3965d6de1f237da7097f1930de83c974d57"
 		},
 		{
 			"path": "both/collections/test.js",

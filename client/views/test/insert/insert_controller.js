@@ -19,7 +19,7 @@ this.TestInsertController = RouteController.extend({
 		
 
 		var subs = [
-			Meteor.subscribe("tests"),
+			Meteor.subscribe("messages"),
 			Meteor.subscribe("tests_empty")
 		];
 		var ready = true;
@@ -35,7 +35,7 @@ this.TestInsertController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			tests: Test.find({}, {}),
+			messages: Question.find({}, {sort:[["Id","asc"]]}),
 			tests_empty: Test.findOne({_id:null}, {})
 		};
 		

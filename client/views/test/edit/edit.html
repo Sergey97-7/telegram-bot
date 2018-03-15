@@ -65,41 +65,13 @@
 					</span>
 				</div>
 			</div>
-			<div class="form-group  field-arr">
-				<label for="arr">
+			<div class="form-group  field-test">
+				<label for="test">
 				</label>
 				<div class="input-div">
-					<div class="radio">
-						<label>
-							<input type="radio" value="int" name="arr" data-type="array" {{itemIsChecked test_details.arr "int"}}>
-							int
-						</label>
-					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" value="str" name="arr" data-type="array" {{itemIsChecked test_details.arr "str"}}>
-							str
-						</label>
-					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" value="sel" name="arr" data-type="array" {{itemIsChecked test_details.arr "sel"}}>
-							sel
-						</label>
-					</div>
-					<span id="help-text" class="help-block">
-					</span>
-					<span id="error-text" class="help-block">
-					</span>
-				</div>
-			</div>
-			<div class="form-group  field-arr2">
-				<label for="arr2">
-				</label>
-				<div class="input-div">
-					<select multiple="multiple" data-role="tagsinput" class="form-control " name="arr2" data-type="array">
-						{{#each getArray test_details.arr2}}
-						<option id="form-input-tags-item" value="{{this}}">							{{this}}</option>
+					<select class="form-control " name="test" data-type="string" required="required">
+						{{#each tests}}
+						<option value="{{_id}}" {{optionIsSelected ../test_details.test _id}}>							{{id}}</option>
 						{{/each}}
 					</select>
 					<span id="help-text" class="help-block">

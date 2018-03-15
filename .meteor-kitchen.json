@@ -314,11 +314,11 @@
 		},
 		{
 			"path": "client/views/test/test.html",
-			"checksum": "4834b090aaa7a8b79e48442f1d85bf5268d45ea4"
+			"checksum": "5b43970bf9f16fb0835f7026253589d20c86b806"
 		},
 		{
 			"path": "client/views/test/test.js",
-			"checksum": "1a6f24324cedc159bc9fd38f5a8abf34d1400d5f"
+			"checksum": "7540225dd284dc784e2a7e3008c2e333064eaad9"
 		},
 		{
 			"path": "client/views/test/test_controller.js",
@@ -326,7 +326,7 @@
 		},
 		{
 			"path": "client/views/test/insert/insert.html",
-			"checksum": "2a8ed9987a2707864c9d4f0d8b5e5236ab3e8209"
+			"checksum": "b6b34cfdb748dcd3024297bf2634af11da40c4d1"
 		},
 		{
 			"path": "client/views/test/insert/insert.js",
@@ -338,7 +338,7 @@
 		},
 		{
 			"path": "client/views/test/details/details.html",
-			"checksum": "afaedb2e72ea0373580d7af1be383c53270b532f"
+			"checksum": "f74c5e61a5f96969be871ac471e0f1e4cbad22b6"
 		},
 		{
 			"path": "client/views/test/details/details.js",
@@ -350,7 +350,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
-			"checksum": "62846722f8dbea19e7aaefcae38c797241c36b8e"
+			"checksum": "7219619cc101cd235d9593d67984f2c15ab434ad"
 		},
 		{
 			"path": "client/views/test/edit/edit.js",

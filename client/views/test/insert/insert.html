@@ -69,11 +69,24 @@
 				<label for="arr">
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" class="form-control " name="arr" data-type="array">
-						<option value="int" selected>							int</option>
-						<option value="str">							str</option>
-						<option value="sel">							sel</option>
-					</select>
+					<div class="radio">
+						<label>
+							<input type="radio" value="int" name="arr" data-type="array" checked>
+							int
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" value="str" name="arr" data-type="array">
+							str
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" value="sel" name="arr" data-type="array">
+							sel
+						</label>
+					</div>
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

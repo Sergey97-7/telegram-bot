@@ -69,11 +69,24 @@
 				<label for="arr">
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" class="form-control " name="arr" data-type="array">
-						<option value="int" {{optionIsSelected test_details.arr "int"}}>							int</option>
-						<option value="str" {{optionIsSelected test_details.arr "str"}}>							str</option>
-						<option value="sel" {{optionIsSelected test_details.arr "sel"}}>							sel</option>
-					</select>
+					<div class="radio">
+						<label>
+							<input type="radio" value="int" name="arr" data-type="array" {{itemIsChecked test_details.arr "int"}}>
+							int
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" value="str" name="arr" data-type="array" {{itemIsChecked test_details.arr "str"}}>
+							str
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" value="sel" name="arr" data-type="array" {{itemIsChecked test_details.arr "sel"}}>
+							sel
+						</label>
+					</div>
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

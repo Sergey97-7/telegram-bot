@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import TelegramBot from 'telegram-bot-api'
-//const Messages = new Mongo.Collection('messages');
+const Messageses = new Mongo.Collection('messageses');
 
 export default class bot
 {
@@ -33,12 +33,15 @@ export default class bot
 			}
             ));
     }
-    static fillDb()
+  /*  static fillDb()
     {
-      //  Messages.insert({ text: 'Hello, world!' }, {name:'jane'});
-       // Messages.insert({ text: 1 });
+        Messageses.insert({ name: "David", score: 250 });
+        Messageses.insert({ name: "Leroy", score: 500 });
+        Messageses.insert({ name: "Anna", score: 100 });
+       Messages.insert({ text: 'Hello, world!' }, {name:'jane'});
+       Messages.insert({ text: 1 });
         
-    }
+   } */
 
 //sends message to user using telegram bot API
    sendMessage(userId, text)
@@ -64,13 +67,21 @@ export default class bot
  // const que = Question.find({Id:1}).fetch();
  //const ques = Messages.find();
 
+
+/*que(userId,text) Правильный вариант
+    {
+        const query = Messageses.findOne({score:100});
+        const textToSend = query.name;
+        this.sendMessage(userId, textToSend);
+    }*/ 
+
  //Question.findOne({Id:1});
-// que(userId,text)
- //   {
-  //      let textToSend; 
- //       get(textToSend);
- //       this.sendMessage(userId, textToSend);
- //   }
+    que(userId,text)
+    {
+        const query = Question.findOne();
+        const textToSend = query.first_question;
+        this.sendMessage(userId, textToSend);
+    }
     Err(userId,text)
     {
     	let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для просмотра доступных функций';
@@ -92,11 +103,11 @@ export default class bot
      			this.Bot_start(from);
     		break;
     		//case '/question':
-     		//	this.sendMessage(userId,que,username);
+     		//	this.sendMessage(userId,,username);
      		//break; 
-           // case '/question':
-          //    this.que(from);
-          //  break; 		
+            case '/question':
+             this.que(from);
+            break; 		
        		default:
 				this.Err(from);
 			break;

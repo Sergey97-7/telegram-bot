@@ -5,7 +5,7 @@ var verifyEmail = false;
 Accounts.config({ sendVerificationEmail: verifyEmail });
 
 Meteor.startup(function() {
-	//bot.fillDb(); каждый раз при запуске будет заполнять
+	//bot.fillDb();
 	const app = new bot();
 	// read environment variables from Meteor.settings
 	if(Meteor.settings && Meteor.settings.env && _.isObject(Meteor.settings.env)) {

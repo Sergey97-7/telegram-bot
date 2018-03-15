@@ -43,7 +43,7 @@ var TestTestViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["id", "string", "questionId", "question.bot_msg", "arr"];
+		var searchFields = ["id", "string", "questionId", "question.bot_msg", "arr", "arr2"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {

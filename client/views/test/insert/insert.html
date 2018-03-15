@@ -80,6 +80,21 @@
 					</span>
 				</div>
 			</div>
+			<div class="form-group  field-arr2">
+				<label for="arr2">
+				</label>
+				<div class="input-div">
+					<select multiple="multiple" data-role="tagsinput" class="form-control " name="arr2" data-type="array">
+						{{#each getArray ""}}
+						<option id="form-input-tags-item" value="{{this}}">							{{this}}</option>
+						{{/each}}
+					</select>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
 			<div class="form-group">
 				<div class="submit-div">
 					<a href="#" id="form-cancel-button" class="btn btn-default">

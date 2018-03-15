@@ -1,3 +1,3 @@
 // Test
-Test.join(Question, "questionId", "question", ["bot_msg"]);
+Test.join(Question, "questionId", "question", ["Id", "bot_msg"]);
 

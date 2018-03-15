@@ -61,7 +61,7 @@
 				<th class="th-sortable" data-sort="string">
 					str
 				</th>
-				<th class="th-sortable" data-sort="question">
+				<th class="th-sortable" data-sort="question.bot_msg">
 					Question
 				</th>
 				<th class="th-sortable" data-sort="arr">
@@ -69,6 +69,12 @@
 				</th>
 				<th class="th-sortable" data-sort="arr2">
 					arr2
+				</th>
+				<th class="th-sortable" data-sort="question">
+					que
+				</th>
+				<th class="th-sortable" data-sort="question.Id">
+					queId
 				</th>
 				<th>
 					&nbsp;
@@ -93,13 +99,19 @@
 			{{string}}
 		</td>
 		<td>
-			{{question}}
+			{{question.bot_msg}}
 		</td>
 		<td>
 			{{arr}}
 		</td>
 		<td>
 			{{arr2}}
+		</td>
+		<td>
+			{{question}}
+		</td>
+		<td>
+			{{question.Id}}
 		</td>
 		<td class="td-icon">
 			<span id="edit-button" class="fa fa-pencil {{editButtonClass}}" title="Edit">

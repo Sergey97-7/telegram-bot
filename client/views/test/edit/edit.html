@@ -70,6 +70,9 @@
 				</label>
 				<div class="input-div">
 					<select multiple="multiple" class="form-control " name="arr" data-type="array">
+						<option value="int" {{optionIsSelected test_details.arr "int"}}>							int</option>
+						<option value="str" {{optionIsSelected test_details.arr "str"}}>							str</option>
+						<option value="sel" {{optionIsSelected test_details.arr "sel"}}>							sel</option>
 					</select>
 					<span id="help-text" class="help-block">
 					</span>

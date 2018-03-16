@@ -30,6 +30,7 @@ Router.privateRoutes = [
 	"bot.edit",
 	"log",
 	"log.details",
+	"log.edit",
 	"test",
 	"test.insert",
 	"test.details",
@@ -96,6 +97,7 @@ Router.map(function () {
 	this.route("/bot/edit/:botId", {name: "bot.edit", title: "", controller: "BotEditController"});
 	this.route("/log", {name: "log", title: "", controller: "LogController"});
 	this.route("/log/details/:logId", {name: "log.details", title: "", controller: "LogDetailsController"});
+	this.route("/log/edit/:logId", {name: "log.edit", title: "", controller: "LogEditController"});
 	this.route("/test", {name: "test", title: "", controller: "TestController"});
 	this.route("/test/insert", {name: "test.insert", title: "", controller: "TestInsertController"});
 	this.route("/test/details/:testId", {name: "test.details", title: "", controller: "TestDetailsController"});

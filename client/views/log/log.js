@@ -318,7 +318,7 @@ Template.LogLogViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		/**/
+		Router.go("log.edit", mergeObjects(Router.currentRouteParams(), {logId: }));
 		return false;
 	}
 });

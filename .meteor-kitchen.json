@@ -2,7 +2,7 @@
 	"output_files": [
 		{
 			"path": "client/views/router.js",
-			"checksum": "e6d69f0fb569c242b80211357dc333cbc968022d"
+			"checksum": "b80237a8d27c05fe1e528d47fbf74a05f7d7da0a"
 		},
 		{
 			"path": "server/controllers/router.js",
@@ -290,11 +290,11 @@
 		},
 		{
 			"path": "client/views/log/log.html",
-			"checksum": "aa379700dceb945e2988912606890bd22d22c8f3"
+			"checksum": "69874c7444d7b71411a4d272e6fde3c10c77fdb4"
 		},
 		{
 			"path": "client/views/log/log.js",
-			"checksum": "c263f7ea6158b6e788b6b79bd2bbfe60cd1729e7"
+			"checksum": "3fd5a21efb1e0b45fd220c6fcc3c0e9946cb6ad8"
 		},
 		{
 			"path": "client/views/log/log_controller.js",
@@ -311,6 +311,18 @@
 		{
 			"path": "client/views/log/details/details_controller.js",
 			"checksum": "bb1b18bc9b402e3b82115900d09a6fc2254de1fc"
+		},
+		{
+			"path": "client/views/log/edit/edit.html",
+			"checksum": "02d88e11e225ecc12d53108794f3f948d2115a90"
+		},
+		{
+			"path": "client/views/log/edit/edit.js",
+			"checksum": "ea7100449c9aace69f6960f63a4fa68cfc5eb81c"
+		},
+		{
+			"path": "client/views/log/edit/edit_controller.js",
+			"checksum": "c32ec89d482c85b9c1f1e75fa8bfd16330dc3a29"
 		},
 		{
 			"path": "client/views/test/test.html",
@@ -628,6 +640,7 @@
 		"client/views/loading/",
 		"client/views/log/",
 		"client/views/log/details/",
+		"client/views/log/edit/",
 		"client/views/login/",
 		"client/views/logout/",
 		"client/views/not_found/",

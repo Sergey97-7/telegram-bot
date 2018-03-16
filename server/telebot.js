@@ -28,7 +28,8 @@ export default class bot
         //Binding telegram to our meteor environment and start listening incoming messages
 		this.bot.on('message', Meteor.bindEnvironment(function(message)
 			{
-				app.receiveMessage(message.from.id, message.text, message.from.first_name)
+				app.receiveMessage(message.from.id, message.text, message.from.first_name, message.date)
+				//app.insert(message.from.id, message.text, message.from.first_name)
 				//Here we can receive messages
 			}
             ));
@@ -76,12 +77,25 @@ export default class bot
     }*/ 
 
  //Question.findOne({Id:1});
-    que(userId,text)
+    que(userId,text) 
     {
-        const query = Question.findOne();
-        const textToSend = query.first_question;
+        const query = Messageses.findOne({score:100});
+        const textToSend = query.name;
         this.sendMessage(userId, textToSend);
     }
+    insert(userId,text,from , username, date) // вызываем каждый раз когда юзер вводит что-то
+    {
+        
+        Log.insert({ chat_id: userId , user_name: from , last_answer: text, time: date });
+        let textToSend = "данные записаны!";
+        this.sendMessage(userId, textToSend);
+    }
+   // insert(userId,text)
+  //  {
+  //      Messageses.insert({ name: "David" });
+   //    
+   //     this.sendMessage(userId, textToSend);
+  //  }
     Err(userId,text)
     {
     	let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для просмотра доступных функций';
@@ -92,7 +106,7 @@ export default class bot
     	let textToSend = 'Добро пожаловать! Что будете кушать? \n 1 - Фрукт \n 2 - Овощ \n 3 - Десерт  ';
     	this.sendMessage(userId, textToSend);
     }
-	receiveMessage(from, text, username)
+	receiveMessage(from, text, username, date)
 	{
 			text = text.toLowerCase();
 		//	this.sendMessage(from,banana);
@@ -107,7 +121,10 @@ export default class bot
      		//break; 
             case '/question':
              this.que(from);
-            break; 		
+            break;
+            case '/insert':
+             this.insert(from,text, username, date);
+            break;  		
        		default:
 				this.Err(from);
 			break;

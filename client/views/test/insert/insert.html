@@ -5,6 +5,15 @@
 			</div>
 		</div>
 		{{> TestInsertTestInsert}}
+		<div class="modal crud-insert-form-container" id="field-new-field-insert-form" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						{{> TestInsertFieldNewFieldInsertFormContainerFieldNewFieldInsertForm}}
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -81,6 +90,78 @@
 					</span>
 				</div>
 			</div>
+			<div class="form-group  field-new-field">
+				<label for="newField">
+					crud
+				</label>
+				<div class="input-div">
+					<table class="table table-striped">
+						<thead>
+							<tr class="crud-table-controls">
+								<td colspan="0">
+									<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#field-new-field-insert-form">
+										<span class="fa fa-plus">
+										</span>
+										Add
+									</button>
+								</td>
+							</tr>
+							{{#if newFieldCrudItems}}
+							<tr class="crud-table-header">
+								<th>
+									&nbsp;
+								</th>
+							</tr>
+							{{/if}}
+						</thead>
+						<tbody>
+							{{#each newFieldCrudItems}}
+							<tr class="crud-table-row">
+								<td class="td-icon delete-icon">
+									<span class="fa fa-trash-o" title="Delete">
+									</span>
+								</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<a href="#" id="form-cancel-button" class="btn btn-default">
+						Cancel
+					</a>
+					<button id="form-submit-button" class="btn btn-success" type="submit">
+						Save
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+
+<template name="TestInsertFieldNewFieldInsertFormContainerFieldNewFieldInsertForm">
+	<div id="test-insert-field-new-field-insert-form-container-field-new-field-insert-form" class="">
+		<h2 id="component-title">
+			Insert
+		</h2>
+		<form role="form">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}
+
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
 			<div class="form-group">
 				<div class="submit-div">
 					<a href="#" id="form-cancel-button" class="btn btn-default">

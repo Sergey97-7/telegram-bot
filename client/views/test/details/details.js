@@ -33,7 +33,8 @@ Template.TestDetailsDetailsTest.onDestroyed(function() {
 });
 
 Template.TestDetailsDetailsTest.onRendered(function() {
-	
+	pageSession.set("newFieldCrudItems", this.data.test_details.newField || []);
+
 
 	pageSession.set("testDetailsDetailsTestInfoMessage", "");
 	pageSession.set("testDetailsDetailsTestErrorMessage", "");
@@ -140,6 +141,8 @@ Template.TestDetailsDetailsTest.helpers({
 	},
 	"errorMessage": function() {
 		return pageSession.get("testDetailsDetailsTestErrorMessage");
+	}, 
+		"newFieldCrudItems": function() {
+		return pageSession.get("newFieldCrudItems");
 	}
-	
 });

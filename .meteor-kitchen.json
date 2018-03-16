@@ -290,7 +290,7 @@
 		},
 		{
 			"path": "client/views/log/log.html",
-			"checksum": "20a53ae95a0097cdf9007558edd3798c5fc1c1c2"
+			"checksum": "347cbbd38a940207b93e6305473a462c595b2285"
 		},
 		{
 			"path": "client/views/log/log.js",
@@ -302,7 +302,7 @@
 		},
 		{
 			"path": "client/views/log/details/details.html",
-			"checksum": "26390f4694eb51b30908fb22502b04c2e8b63ffb"
+			"checksum": "23b55de3291597a53b10d34a66e1c03fc9e1eec7"
 		},
 		{
 			"path": "client/views/log/details/details.js",
@@ -314,11 +314,11 @@
 		},
 		{
 			"path": "client/views/test/test.html",
-			"checksum": "ab065e219727d459b40429613f176cff361bc771"
+			"checksum": "bf6dad3cad3b80f905442bcff5407b32cb4c95e7"
 		},
 		{
 			"path": "client/views/test/test.js",
-			"checksum": "56996082133cbad53e34887d61ee19f2faa3d925"
+			"checksum": "e81ce82fc04019ae08816fd8b78cb847a66e56ac"
 		},
 		{
 			"path": "client/views/test/test_controller.js",
@@ -326,11 +326,11 @@
 		},
 		{
 			"path": "client/views/test/insert/insert.html",
-			"checksum": "8bcabcefa829565dd355581b6586beb29b6d4a99"
+			"checksum": "39af69ab2c36ddd9d51603eeadd6313c69c82bd4"
 		},
 		{
 			"path": "client/views/test/insert/insert.js",
-			"checksum": "d429d7a82af9140954dbdcdc45dc983365a5a52d"
+			"checksum": "b0c34c70b57d17006aa7f61827b2998b8624745d"
 		},
 		{
 			"path": "client/views/test/insert/insert_controller.js",
@@ -338,11 +338,11 @@
 		},
 		{
 			"path": "client/views/test/details/details.html",
-			"checksum": "282dffaa14a8d205919a5df123198e5c593ddfd7"
+			"checksum": "3a475e1703228cec7661ba01baa2965f1bc89445"
 		},
 		{
 			"path": "client/views/test/details/details.js",
-			"checksum": "859baeaabaea2e7f10d7c64cecbe8646ed82ef8e"
+			"checksum": "aaee452b6e06eef1a8a5c1dc6870d2609cb2a0e1"
 		},
 		{
 			"path": "client/views/test/details/details_controller.js",
@@ -350,11 +350,11 @@
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
-			"checksum": "5b5d5c0f5f21471c5019ace9f3f7068b390e1292"
+			"checksum": "401706d495a78f0988e35574c52520fd7698be88"
 		},
 		{
 			"path": "client/views/test/edit/edit.js",
-			"checksum": "b3cc0366b25a379d7b5988837960101ce69d2efd"
+			"checksum": "ad086082682dc44ee154e13f09f130e638837d38"
 		},
 		{
 			"path": "client/views/test/edit/edit_controller.js",

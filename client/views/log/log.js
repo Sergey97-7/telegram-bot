@@ -43,7 +43,7 @@ var LogLogViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["chat_id", "user_name", "last_question", "last_answer", "time", "data", "int"];
+		var searchFields = ["chat_id", "user_name", "last_question", "last_answer", "time", "test"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {
@@ -318,7 +318,7 @@ Template.LogLogViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		Router.go("log.edit", mergeObjects(Router.currentRouteParams(), {logId: }));
+		Router.go("log.edit", mergeObjects(Router.currentRouteParams(), {logId: this._id}));
 		return false;
 	}
 });

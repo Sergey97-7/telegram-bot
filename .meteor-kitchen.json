@@ -290,11 +290,11 @@
 		},
 		{
 			"path": "client/views/log/log.html",
-			"checksum": "69874c7444d7b71411a4d272e6fde3c10c77fdb4"
+			"checksum": "4e7f342810f31abb442746621ea85afcd78d76b3"
 		},
 		{
 			"path": "client/views/log/log.js",
-			"checksum": "3fd5a21efb1e0b45fd220c6fcc3c0e9946cb6ad8"
+			"checksum": "4b2d78d7e602b95738caae8aef86ebc6ccf5643b"
 		},
 		{
 			"path": "client/views/log/log_controller.js",
@@ -302,7 +302,7 @@
 		},
 		{
 			"path": "client/views/log/details/details.html",
-			"checksum": "1c2f6bc3c3803baa227d49a4bc0a88474904afd8"
+			"checksum": "f46c5f937aa51d0ee8368a2909729e626220508e"
 		},
 		{
 			"path": "client/views/log/details/details.js",
@@ -314,7 +314,7 @@
 		},
 		{
 			"path": "client/views/log/edit/edit.html",
-			"checksum": "2359b92768843e79ec435ad90f83f9f343408896"
+			"checksum": "8a9c234d5be352d9d376f1136bd0049b70063f7d"
 		},
 		{
 			"path": "client/views/log/edit/edit.js",

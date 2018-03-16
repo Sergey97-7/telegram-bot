@@ -83,10 +83,10 @@ export default class bot
         const textToSend = query.name;
         this.sendMessage(userId, textToSend);
     }
-    insert(userId,text,from , username, date) // вызываем каждый раз когда юзер вводит что-то
+    insert(userId, text, from,  date) // вызываем каждый раз когда юзер вводит что-то
     {
         
-        Log.insert({ chat_id: userId , user_name: from , last_answer: text, time: date });
+        Log.insert({ chat_id: userId , last_answer: text, user_name: from ,   time: date }); 
         let textToSend = "данные записаны!";
         this.sendMessage(userId, textToSend);
     }
@@ -126,7 +126,8 @@ export default class bot
              this.insert(from,text, username, date);
             break;  		
        		default:
-				this.Err(from);
+          this.insert(from,text, username, date)
+				//this.Err(from);
 			break;
 		}
 	}	

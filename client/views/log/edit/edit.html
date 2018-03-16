@@ -10,6 +10,9 @@
 
 <template name="LogEditEditForm">
 	<div id="log-edit-edit-form" class="">
+		<h2 id="component-title">
+			edit
+		</h2>
 		<form role="form">
 			{{#if errorMessage}}
 			<div class="alert alert-warning">
@@ -26,7 +29,7 @@
 				<label for="chat_id">
 				</label>
 				<div class="input-div">
-					<input type="text" name="chat_id" value="" class="form-control " autofocus="autofocus" data-type="string">
+					<input type="text" name="chat_id" value="{{log_details.chat_id}}" class="form-control " autofocus="autofocus" data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -37,7 +40,7 @@
 				<label for="user_name">
 				</label>
 				<div class="input-div">
-					<input type="text" name="user_name" value="" class="form-control " data-type="string">
+					<input type="text" name="user_name" value="{{log_details.user_name}}" class="form-control " data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -48,7 +51,7 @@
 				<label for="last_question">
 				</label>
 				<div class="input-div">
-					<input type="text" name="last_question" value="" class="form-control " data-type="string">
+					<input type="text" name="last_question" value="{{log_details.last_question}}" class="form-control " data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -59,7 +62,7 @@
 				<label for="last_answer">
 				</label>
 				<div class="input-div">
-					<input type="text" name="last_answer" value="" class="form-control " data-type="string">
+					<input type="text" name="last_answer" value="{{log_details.last_answer}}" class="form-control " data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -70,7 +73,7 @@
 				<label for="time">
 				</label>
 				<div class="input-div">
-					<input type="text" name="time" value="" class="form-control " data-type="time">
+					<input type="text" name="time" value="{{secondsToTime log_details.time ''}}" class="form-control " data-type="time">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -81,7 +84,7 @@
 				<label for="data">
 				</label>
 				<div class="input-div">
-					<input type="text" name="data" value="" class="form-control " data-type="date">
+					<input type="text" name="data" value="{{formatDate log_details.data ''}}" class="form-control " data-type="date">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -92,7 +95,7 @@
 				<label for="int">
 				</label>
 				<div class="input-div">
-					<input type="text" name="int" value="" class="form-control " data-type="integer">
+					<input type="text" name="int" value="{{log_details.int}}" class="form-control " data-type="integer">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

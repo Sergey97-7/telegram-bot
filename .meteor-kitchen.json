@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/bot/edit/edit.html",
-			"checksum": "1aae68b990f11d43daa040a6cbf91f3bc101f40f"
+			"checksum": "9ed2df96e8c7fbbe8abaaad4d25a48f9bd72bcc3"
 		},
 		{
 			"path": "client/views/bot/edit/edit.js",
@@ -314,11 +314,11 @@
 		},
 		{
 			"path": "client/views/log/edit/edit.html",
-			"checksum": "02d88e11e225ecc12d53108794f3f948d2115a90"
+			"checksum": "2359b92768843e79ec435ad90f83f9f343408896"
 		},
 		{
 			"path": "client/views/log/edit/edit.js",
-			"checksum": "ea7100449c9aace69f6960f63a4fa68cfc5eb81c"
+			"checksum": "65ebde875b2944cf3d9bfe23bc9ce99f7c3fdcd3"
 		},
 		{
 			"path": "client/views/log/edit/edit_controller.js",

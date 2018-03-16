@@ -73,7 +73,7 @@ Template.LogEditEditForm.events({
 		var self = this;
 
 		function submitAction(result, msg) {
-			var logEditEditFormMode = "insert";
+			var logEditEditFormMode = "update";
 			if(!t.find("#form-cancel-button")) {
 				switch(logEditEditFormMode) {
 					case "insert": {
@@ -107,7 +107,7 @@ Template.LogEditEditForm.events({
 			function(values) {
 				
 
-				Meteor.call("logInsert", values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
+				Meteor.call("logUpdate", t.data.log_details._id, values, function(e, r) { if(e) errorAction(e); else submitAction(r); });
 			}
 		);
 

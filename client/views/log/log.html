@@ -63,6 +63,12 @@
 				<th class="th-sortable" data-sort="time">
 					time
 				</th>
+				<th class="th-sortable" data-sort="data">
+					data
+				</th>
+				<th class="th-sortable" data-sort="int">
+					int
+				</th>
 			</tr>
 		</thead>
 		<tbody id="dataview-table-items">
@@ -86,7 +92,13 @@
 			{{last_answer}}
 		</td>
 		<td>
-			{{formatDate time ''}}
+			{{secondsToTime time ''}}
+		</td>
+		<td>
+			{{formatDate data ''}}
+		</td>
+		<td>
+			{{int}}
 		</td>
 	</tr>
 </template>

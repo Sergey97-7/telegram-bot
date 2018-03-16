@@ -70,7 +70,25 @@
 				</label>
 				<div class="input-div col-sm-9">
 					<p class="form-control-static  control-field-time">
-						{{formatDate log_details.time ''}}
+						{{secondsToTime log_details.time ''}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-data">
+				<label for="data" class="col-sm-3 control-label">
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-data">
+						{{formatDate log_details.data ''}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-int">
+				<label for="int" class="col-sm-3 control-label">
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-int">
+						{{log_details.int}}
 					</p>
 				</div>
 			</div>

@@ -3,6 +3,7 @@ import { Mongo } from 'meteor/mongo';
 import TelegramBot from 'telegram-bot-api'
 const Messageses = new Mongo.Collection('messageses');
 
+
 export default class bot
 {
     constructor()
@@ -34,6 +35,7 @@ export default class bot
 			}
             ));
     }
+
   /*  static fillDb()
     {
         Messageses.insert({ name: "David", score: 250 });
@@ -83,20 +85,44 @@ export default class bot
         const textToSend = query.name;
         this.sendMessage(userId, textToSend);
     }
-    insert(userId, text, from,  date) // вызываем каждый раз когда юзер вводит что-то
-    {
-        
+    insert(userId, text, from,  date) // если метод find() - false,то вызываем. Добавление нового пользователя
+    {    
         Log.insert({ chat_id: userId , last_answer: text, user_name: from ,   time: date }); 
-        let textToSend = "данные записаны!";
-        this.sendMessage(userId, textToSend);
+       // let textToSend = "данные записаны!";
+       // this.sendMessage(userId, textToSend);
     }
+    update(userId, text, from,  date) // / если метод find() - true,то вызываем. Обновляет уже существующего пользователя
+    {
+        Log.update({ chat_id: userId , last_answer: text, user_name: from ,   time: date }); 
+    }
+  /*  find(userId)
+    {
+        const findUser = Log.find({chat_id:user_id});
+        const findUserChatId = findUser.user_id;
+        let textToSend = userId;
+        this.sendMessage(userId, textToSend);
+    } */
+
+
+   // если пользователь есть в базе, то мы ищем его последний ответ и задаем следующий вопрос. если нет в базе - мы создаем новую запись.
+   // если такой user_id существует, то мы возвращаем флаг true, иначе флаг false
+   // если find = true, то
+   // const findUser = Log.find({chat_id:user_id});
+
+    find(userId) // метод проверки пользователя в таблице "Log"
+    {
+      const findUser = Log.findOne({chat_id: userId});
+      if (typeof findUser == 'undefined')  return false; //var userflag = false;
+      else return true; //userflag = true;
+    }
+
    // insert(userId,text)
   //  {
   //      Messageses.insert({ name: "David" });
    //    
    //     this.sendMessage(userId, textToSend);
   //  }
-    Err(userId,text)
+  Err(userId,text)
     {
     	let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для просмотра доступных функций';
     	this.sendMessage(userId, textToSend);
@@ -108,19 +134,38 @@ export default class bot
     }
 	receiveMessage(from, text, username, date)
 	{
+
 			text = text.toLowerCase();
 		//	this.sendMessage(from,banana);
+     var userflag = this.find(from);
+     if (userflag == true)
+     {
+      this.insert(from, text, username,  date);
+        console.log("true. данные ПЕРЕзаписаны.");
+        
+     }
+     else
+      {
+        this.update(from, text, username,  date);
+        console.log("false. данные записаны.");
+      }
+
+   // console.log(userflag);
 		
-  		switch(text) 
+  	/*	switch(text) 
   		{
    			case '/start':
      			this.Bot_start(from);
+         
     		break;
     		//case '/question':
      		//	this.sendMessage(userId,,username);
      		//break; 
             case '/question':
              this.que(from);
+            break;
+            case '/find':
+             this.find(from);
             break;
             case '/insert':
              this.insert(from,text, username, date);
@@ -129,8 +174,8 @@ export default class bot
           this.insert(from,text, username, date)
 				//this.Err(from);
 			break;
-		}
+		  } */
 	}	
 
-//
+
 } // closing class bot

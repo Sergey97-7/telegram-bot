@@ -10,7 +10,3 @@ Meteor.publish("log_empty", function() {
 	return Log.find({_id:null}, {});
 });
 
-Meteor.publish("log_empty_find_one", function() {
-	return Log.find({_id:null}, {});
-});
-

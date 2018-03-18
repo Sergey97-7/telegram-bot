@@ -79,9 +79,9 @@
 					Test
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" data-role="tagsinput" class="form-control " name="testid" data-type="object">
-						{{#each getArray test_details.testid}}
-						<option id="form-input-tags-item" value="{{this}}">							{{this}}</option>
+					<select multiple="multiple" class="form-control " name="testid" data-type="object">
+						{{#each tests}}
+						<option value="{{_id}}" {{optionIsSelected ../test_details.testid _id}}>							{{id}}</option>
 						{{/each}}
 					</select>
 					<span id="help-text" class="help-block">

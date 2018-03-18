@@ -34,7 +34,7 @@ this.LogInsertController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
-			log_empty: Log.find({_id:null}, {})
+			log_empty: Log.findOne({_id:null}, {})
 		};
 		
 

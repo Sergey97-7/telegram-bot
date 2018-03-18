@@ -2,7 +2,7 @@
 	"output_files": [
 		{
 			"path": "client/views/router.js",
-			"checksum": "b80237a8d27c05fe1e528d47fbf74a05f7d7da0a"
+			"checksum": "9e60b8ce28cdedf1dfe7d118562d7e5d6d6f45d0"
 		},
 		{
 			"path": "server/controllers/router.js",
@@ -290,11 +290,11 @@
 		},
 		{
 			"path": "client/views/log/log.html",
-			"checksum": "4e7f342810f31abb442746621ea85afcd78d76b3"
+			"checksum": "faf8fcdc7ed9e37ad36c48ffdfbbcaf84b6950b4"
 		},
 		{
 			"path": "client/views/log/log.js",
-			"checksum": "4b2d78d7e602b95738caae8aef86ebc6ccf5643b"
+			"checksum": "248b9114ba585165572efbdd18fb4d9e676c0411"
 		},
 		{
 			"path": "client/views/log/log_controller.js",
@@ -325,6 +325,18 @@
 			"checksum": "c32ec89d482c85b9c1f1e75fa8bfd16330dc3a29"
 		},
 		{
+			"path": "client/views/log/insert/insert.html",
+			"checksum": "ac4053f3efc1e2c114de9b40e0574c76f0f4dfcb"
+		},
+		{
+			"path": "client/views/log/insert/insert.js",
+			"checksum": "4eac62cbcc17adacd80e81c684630987d9ffaa4d"
+		},
+		{
+			"path": "client/views/log/insert/insert_controller.js",
+			"checksum": "918e262ced6d48a0311ba5c37a468c1f9d5ae5b5"
+		},
+		{
 			"path": "client/views/test/test.html",
 			"checksum": "bf6dad3cad3b80f905442bcff5407b32cb4c95e7"
 		},
@@ -338,7 +350,7 @@
 		},
 		{
 			"path": "client/views/test/insert/insert.html",
-			"checksum": "39af69ab2c36ddd9d51603eeadd6313c69c82bd4"
+			"checksum": "88d55d9673662a57c2e78579749f2fb3b6698936"
 		},
 		{
 			"path": "client/views/test/insert/insert.js",
@@ -362,7 +374,7 @@
 		},
 		{
 			"path": "client/views/test/edit/edit.html",
-			"checksum": "401706d495a78f0988e35574c52520fd7698be88"
+			"checksum": "b66ee3c8685ace1bcbef67859feb4fc6004b3913"
 		},
 		{
 			"path": "client/views/test/edit/edit.js",
@@ -402,7 +414,7 @@
 		},
 		{
 			"path": "server/publish/log.js",
-			"checksum": "7c81e3965d6de1f237da7097f1930de83c974d57"
+			"checksum": "7c7523301c72f937c27ba8f3b52d7c3ac0d14f05"
 		},
 		{
 			"path": "both/collections/test.js",
@@ -641,6 +653,7 @@
 		"client/views/log/",
 		"client/views/log/details/",
 		"client/views/log/edit/",
+		"client/views/log/insert/",
 		"client/views/login/",
 		"client/views/logout/",
 		"client/views/not_found/",

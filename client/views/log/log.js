@@ -151,7 +151,7 @@ Template.LogLogView.events({
 
 	"click #dataview-insert-button": function(e, t) {
 		e.preventDefault();
-		/**/
+		Router.go("log.insert", mergeObjects(Router.currentRouteParams(), {}));
 	},
 
 	"click #dataview-export-default": function(e, t) {

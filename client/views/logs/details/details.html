@@ -1,0 +1,102 @@
+<template name="LogsDetails">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+			</div>
+		</div>
+		{{> LogsDetailsDetailsForm}}
+	</div>
+</template>
+
+<template name="LogsDetailsDetailsForm">
+	<div id="logs-details-details-form" class="">
+		<h2 id="component-title">
+			<a href="#" id="form-back-button" class="btn btn-default" title="back">
+				<span class="fa fa-chevron-left">
+				</span>
+			</a>
+			Детали
+		</h2>
+		<form role="form" class="form-horizontal">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}
+
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+			<div class="form-group  field-user_id">
+				<label for="user_id" class="col-sm-3 control-label">
+					Id пользователя
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-user_id">
+						{{log_details.user_id}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-user_name">
+				<label for="user_name" class="col-sm-3 control-label">
+					Никнейм
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-user_name">
+						{{log_details.user_name}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-last_question">
+				<label for="last_question" class="col-sm-3 control-label">
+					Последний вопрос
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-last_question">
+						{{log_details.last_question}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-last_answer">
+				<label for="last_answer" class="col-sm-3 control-label">
+					Последний ответ
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-last_answer">
+						{{log_details.last_answer}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-tel">
+				<label for="tel" class="col-sm-3 control-label">
+					Телефон
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-tel">
+						{{log_details.tel}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-time">
+				<label for="time" class="col-sm-3 control-label">
+					Время
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static  control-field-time">
+						{{secondsToTime log_details.time ''}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div col-sm-9 col-sm-offset-3">
+					<a href="#" id="form-close-button" class="btn btn-primary">
+						OK
+					</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+

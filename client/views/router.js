@@ -24,18 +24,18 @@ Router.privateRoutes = [
 	"user_settings.profile",
 	"user_settings.change_pass",
 	"logout",
-	"bot",
-	"bot.insert",
-	"bot.details",
-	"bot.edit",
-	"log",
-	"log.details",
-	"log.edit",
-	"log.insert",
-	"test",
-	"test.insert",
-	"test.details",
-	"test.edit"
+	"questions",
+	"questions.insert",
+	"questions.details",
+	"questions.edit",
+	"logs",
+	"logs.details",
+	"logs.edit",
+	"logs.insert",
+	"answers",
+	"answers.insert",
+	"answers.details",
+	"answers.edit"
 ];
 
 Router.freeRoutes = [
@@ -92,16 +92,16 @@ Router.map(function () {
 	this.route("/user_settings/profile", {name: "user_settings.profile", title: "", controller: "UserSettingsProfileController"});
 	this.route("/user_settings/change_pass", {name: "user_settings.change_pass", title: "", controller: "UserSettingsChangePassController"});
 	this.route("/logout", {name: "logout", title: "", controller: "LogoutController"});
-	this.route("/bot", {name: "bot", title: "", controller: "BotController"});
-	this.route("/bot/insert", {name: "bot.insert", title: "", controller: "BotInsertController"});
-	this.route("/bot/details/:botId", {name: "bot.details", title: "", controller: "BotDetailsController"});
-	this.route("/bot/edit/:botId", {name: "bot.edit", title: "", controller: "BotEditController"});
-	this.route("/log", {name: "log", title: "", controller: "LogController"});
-	this.route("/log/details/:logId", {name: "log.details", title: "", controller: "LogDetailsController"});
-	this.route("/log/edit/:logId", {name: "log.edit", title: "", controller: "LogEditController"});
-	this.route("/log/insert", {name: "log.insert", title: "", controller: "LogInsertController"});
-	this.route("/test", {name: "test", title: "", controller: "TestController"});
-	this.route("/test/insert", {name: "test.insert", title: "", controller: "TestInsertController"});
-	this.route("/test/details/:testId", {name: "test.details", title: "", controller: "TestDetailsController"});
-	this.route("/test/edit/:testId", {name: "test.edit", title: "", controller: "TestEditController"});
+	this.route("/questions", {name: "questions", title: "", controller: "QuestionsController"});
+	this.route("/questions/insert", {name: "questions.insert", title: "", controller: "QuestionsInsertController"});
+	this.route("/questions/details/:botId", {name: "questions.details", title: "", controller: "QuestionsDetailsController"});
+	this.route("/questions/edit/:botId", {name: "questions.edit", title: "", controller: "QuestionsEditController"});
+	this.route("/logs", {name: "logs", title: "", controller: "LogsController"});
+	this.route("/logs/details/:logId", {name: "logs.details", title: "", controller: "LogsDetailsController"});
+	this.route("/logs/edit/:logId", {name: "logs.edit", title: "", controller: "LogsEditController"});
+	this.route("/logs/insert", {name: "logs.insert", title: "", controller: "LogsInsertController"});
+	this.route("/answers", {name: "answers", title: "", controller: "AnswersController"});
+	this.route("/answers/insert", {name: "answers.insert", title: "", controller: "AnswersInsertController"});
+	this.route("/answers/details/:answerId", {name: "answers.details", title: "", controller: "AnswersDetailsController"});
+	this.route("/answers/edit/:answerId", {name: "answers.edit", title: "", controller: "AnswersEditController"});
 });

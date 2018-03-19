@@ -1,0 +1,113 @@
+<template name="LogsInsert">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+			</div>
+		</div>
+		{{> LogsInsertInsertForm}}
+	</div>
+</template>
+
+<template name="LogsInsertInsertForm">
+	<div id="logs-insert-insert-form" class="">
+		<h2 id="component-title">
+			Новая история
+		</h2>
+		<form role="form">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}
+
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+			<div class="form-group  field-user_id">
+				<label for="user_id">
+					Id пользователя
+				</label>
+				<div class="input-div">
+					<input type="text" name="user_id" value="" class="form-control " autofocus="autofocus" data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-user_name">
+				<label for="user_name">
+					Никнейм
+				</label>
+				<div class="input-div">
+					<input type="text" name="user_name" value="" class="form-control " data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-last_question">
+				<label for="last_question">
+					Последний вопрос
+				</label>
+				<div class="input-div">
+					<input type="text" name="last_question" value="" class="form-control " data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-last_answer">
+				<label for="last_answer">
+					Последний ответ
+				</label>
+				<div class="input-div">
+					<input type="text" name="last_answer" value="" class="form-control " data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-tel">
+				<label for="tel">
+					Телефон
+				</label>
+				<div class="input-div">
+					<input type="text" name="tel" value="" class="form-control " data-type="string">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group  field-time">
+				<label for="time">
+					Время
+				</label>
+				<div class="input-div">
+					<input type="text" name="time" value="" class="form-control " data-type="time">
+					<span id="help-text" class="help-block">
+					</span>
+					<span id="error-text" class="help-block">
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div">
+					<a href="#" id="form-cancel-button" class="btn btn-default">
+						Cancel
+					</a>
+					<button id="form-submit-button" class="btn btn-success" type="submit">
+						Save
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+

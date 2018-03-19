@@ -151,7 +151,7 @@ Template.AnswersAnswerView.events({
 
 	"click #dataview-insert-button": function(e, t) {
 		e.preventDefault();
-		Router.go("answer.insert", mergeObjects(Router.currentRouteParams(), {}));
+		Router.go("answers.insert", mergeObjects(Router.currentRouteParams(), {}));
 	},
 
 	"click #dataview-export-default": function(e, t) {
@@ -265,7 +265,7 @@ Template.AnswersAnswerViewTableItems.events({
 	"click td": function(e, t) {
 		e.preventDefault();
 		
-		Router.go("answer.details", mergeObjects(Router.currentRouteParams(), {answerId: this._id}));
+		Router.go("answers.details", mergeObjects(Router.currentRouteParams(), {answerId: this._id}));
 		return false;
 	},
 
@@ -318,7 +318,7 @@ Template.AnswersAnswerViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		Router.go("answer.edit", mergeObjects(Router.currentRouteParams(), {answerId: this._id}));
+		Router.go("answers.edit", mergeObjects(Router.currentRouteParams(), {answerId: this._id}));
 		return false;
 	}
 });

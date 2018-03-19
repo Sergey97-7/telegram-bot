@@ -151,7 +151,7 @@ Template.LogsLogView.events({
 
 	"click #dataview-insert-button": function(e, t) {
 		e.preventDefault();
-		Router.go("log.insert", mergeObjects(Router.currentRouteParams(), {}));
+		Router.go("logs.insert", mergeObjects(Router.currentRouteParams(), {}));
 	},
 
 	"click #dataview-export-default": function(e, t) {
@@ -265,7 +265,7 @@ Template.LogsLogViewTableItems.events({
 	"click td": function(e, t) {
 		e.preventDefault();
 		
-		Router.go("log.details", mergeObjects(Router.currentRouteParams(), {logId: this._id}));
+		Router.go("logs.details", mergeObjects(Router.currentRouteParams(), {logId: this._id}));
 		return false;
 	},
 
@@ -318,7 +318,7 @@ Template.LogsLogViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		Router.go("log.edit", mergeObjects(Router.currentRouteParams(), {logId: this._id}));
+		Router.go("logs.edit", mergeObjects(Router.currentRouteParams(), {logId: this._id}));
 		return false;
 	}
 });

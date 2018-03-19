@@ -123,12 +123,12 @@ Template.QuestionsDetailsDetailsForm.events({
 	"click #form-close-button": function(e, t) {
 		e.preventDefault();
 
-		/*CLOSE_REDIRECT*/
+		Router.go("questions", mergeObjects(Router.currentRouteParams(), {}));
 	},
 	"click #form-back-button": function(e, t) {
 		e.preventDefault();
 
-		/*BACK_REDIRECT*/
+		Router.go("questions", mergeObjects(Router.currentRouteParams(), {}));
 	}
 
 	

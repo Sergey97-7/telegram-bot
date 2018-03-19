@@ -87,7 +87,7 @@ Template.QuestionsInsertInsertForm.events({
 				}
 			}
 
-			/*SUBMIT_REDIRECT*/
+			Router.go("questions", mergeObjects(Router.currentRouteParams(), {}));
 		}
 
 		function errorAction(msg) {
@@ -118,7 +118,7 @@ Template.QuestionsInsertInsertForm.events({
 
 		
 
-		/*CANCEL_REDIRECT*/
+		Router.go("questions", mergeObjects(Router.currentRouteParams(), {}));
 	},
 	"click #form-close-button": function(e, t) {
 		e.preventDefault();

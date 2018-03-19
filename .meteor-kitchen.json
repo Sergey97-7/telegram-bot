@@ -246,7 +246,7 @@
 		},
 		{
 			"path": "client/views/questions/questions.js",
-			"checksum": "2f0019de2e8fae4a0f2f64d3f45a6fa85f25f712"
+			"checksum": "f98cc14a8a60144d87c90e2f4f6ec5581354c767"
 		},
 		{
 			"path": "client/views/questions/questions_controller.js",
@@ -254,11 +254,11 @@
 		},
 		{
 			"path": "client/views/questions/insert/insert.html",
-			"checksum": "d468d15354f85bb4ab36c970ec830b4086e02257"
+			"checksum": "84244611f4077271f5aaf498a6bb387050dddad1"
 		},
 		{
 			"path": "client/views/questions/insert/insert.js",
-			"checksum": "71654c4d12bf38b1c7fd9cb55cf2f5ba265319d9"
+			"checksum": "e2c39d1d6562e948ac91d5b2cefc91901a38c496"
 		},
 		{
 			"path": "client/views/questions/insert/insert_controller.js",
@@ -266,11 +266,11 @@
 		},
 		{
 			"path": "client/views/questions/details/details.html",
-			"checksum": "4a00c52cac67e60c484e2abe391510d0decc3a78"
+			"checksum": "e44f900e895fa33e0c37bb83ac0fc2c06ddcade1"
 		},
 		{
 			"path": "client/views/questions/details/details.js",
-			"checksum": "49f670504ec59587e654eeb870c244def8ed46bd"
+			"checksum": "b497ee5c9e4564307786bc0cb0208b2ab4232c89"
 		},
 		{
 			"path": "client/views/questions/details/details_controller.js",
@@ -278,11 +278,11 @@
 		},
 		{
 			"path": "client/views/questions/edit/edit.html",
-			"checksum": "2e1d5b769ce969192b294928fb8cbe5be1af10af"
+			"checksum": "07dd36c0de3c51090aab5cc55d6de54a96e5fdbb"
 		},
 		{
 			"path": "client/views/questions/edit/edit.js",
-			"checksum": "26ee324fa718766809fa7396e9c9d19fbc36a9f2"
+			"checksum": "6151b67a27bf1fe66d788ddea427e561ff7cf3bf"
 		},
 		{
 			"path": "client/views/questions/edit/edit_controller.js",
@@ -294,7 +294,7 @@
 		},
 		{
 			"path": "client/views/logs/logs.js",
-			"checksum": "e786ace1b010123b818b0e557a6e51f412c92b4c"
+			"checksum": "4909d3d0030bff8b0702103497cba02963d0d4d0"
 		},
 		{
 			"path": "client/views/logs/logs_controller.js",
@@ -342,7 +342,7 @@
 		},
 		{
 			"path": "client/views/answers/answers.js",
-			"checksum": "0278b1547574999d2ccf6cfcb24ef984ca0c28c6"
+			"checksum": "2312be68c5a76b8508dfad46f6c1b69428d829c4"
 		},
 		{
 			"path": "client/views/answers/answers_controller.js",

@@ -151,7 +151,7 @@ Template.QuestionsNewDataView.events({
 
 	"click #dataview-insert-button": function(e, t) {
 		e.preventDefault();
-		Router.go("bot.insert", mergeObjects(Router.currentRouteParams(), {}));
+		Router.go("questions.insert", mergeObjects(Router.currentRouteParams(), {}));
 	},
 
 	"click #dataview-export-default": function(e, t) {
@@ -265,7 +265,7 @@ Template.QuestionsNewDataViewTableItems.events({
 	"click td": function(e, t) {
 		e.preventDefault();
 		
-		Router.go("bot.details", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
+		Router.go("questions.details", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
 		return false;
 	},
 
@@ -318,7 +318,7 @@ Template.QuestionsNewDataViewTableItems.events({
 	},
 	"click #edit-button": function(e, t) {
 		e.preventDefault();
-		Router.go("bot.edit", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
+		Router.go("questions.edit", mergeObjects(Router.currentRouteParams(), {botId: this._id}));
 		return false;
 	}
 });

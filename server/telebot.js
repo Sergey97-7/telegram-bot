@@ -87,13 +87,15 @@ export default class bot
     }
     insert(userId, text, from,  date) // если метод find() - false,то вызываем. Добавление нового пользователя
     {    
-        Log.insert({ chat_id: userId , last_answer: text, user_name: from ,   time: date }); 
+    	//var count = 1;
+        Log.insert({ user_id: userId , last_answer: text, user_name: from ,   time: date}); 
        // let textToSend = "данные записаны!";
        // this.sendMessage(userId, textToSend);
     }
     update(userId, text, from,  date) // / если метод find() - true,то вызываем. Обновляет уже существующего пользователя
     {
-        Log.update({chat_id: userId}, {$set:{chat_id: userId, last_answer: text, user_name: from ,   time: date }}); 
+
+        Log.update({user_id: userId}, {$set:{user_id: userId, last_answer: text, user_name: from ,   time: date}}); 
     }
   /*  find(userId)
     {
@@ -111,7 +113,7 @@ export default class bot
 
     find(userId) // метод проверки пользователя в таблице "Log"
     {
-      const findUser = Log.findOne({chat_id: userId});
+      const findUser = Log.findOne({user_id: userId});
       if (typeof findUser == 'undefined')  return false; //var userflag = false;
       else return true; //userflag = true;
     }
@@ -122,7 +124,9 @@ export default class bot
    //    
    //     this.sendMessage(userId, textToSend);
   //  }
-  firsq()
+
+
+  firstq() // проверка на первый вопрос. задан ли он. Если нет - ошибка. Если да - возвращает поле с текстом первого вопроса
     {
       var firstq =Question.findOne({first_question: true});
       if (firstq = "undefined") 
@@ -133,7 +137,7 @@ export default class bot
       else 
         { 
           firstq = firstq.first_question;
-         // let question = firsq.question(в этом методе сам текст вопроса); // тут должно быть поле вопросы из таблицы Question 
+          let question = firstq.bot_msg;
           return question;
         }
     }
@@ -144,7 +148,9 @@ export default class bot
     }
      Bot_start(userId,text)
     {
-    	let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';
+    	//this.firstq();
+    	let textToSend = firstq();
+    	//let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';
     	this.sendMessage(userId, textToSend);
     }
 	receiveMessage(from, text, username, date)
@@ -164,6 +170,23 @@ export default class bot
         this.update(from, text, username,  date);
         console.log("true. Данные пользователя перезаписаны.");
       }
+
+   /*   switch(text)
+      {
+      	case: '/start':
+      	this.firstq()
+      	this.sendMessage(from, question);
+      	break;
+      	default:
+      	break;
+      } */
+
+
+
+
+
+
+
  // если пользователь уже есть в базе, то мы ищем его последний ответ(меняем поле (findone по ответу и присваеваем переменной ). этот ответ
 //var q = Question.findOne({}) - последний вопрос бота
 

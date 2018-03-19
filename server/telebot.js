@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import TelegramBot from 'telegram-bot-api'
-const Messageses = new Mongo.Collection('messageses');
+//const Messageses = new Mongo.Collection('messageses');
 
 
 export default class bot
@@ -93,7 +93,7 @@ export default class bot
     }
     update(userId, text, from,  date) // / если метод find() - true,то вызываем. Обновляет уже существующего пользователя
     {
-        Log.update({ chat_id: userId , last_answer: text, user_name: from ,   time: date }); 
+        Log.update({chat_id: userId}, {$set:{chat_id: userId, last_answer: text, user_name: from ,   time: date }}); 
     }
   /*  find(userId)
     {
@@ -122,6 +122,21 @@ export default class bot
    //    
    //     this.sendMessage(userId, textToSend);
   //  }
+  firsq()
+    {
+      var firstq =Question.findOne({first_question: true});
+      if (firstq = "undefined") 
+      {
+        console.log("Ошибка! Первый вопрос не задан!");
+        return -1;
+      }
+      else 
+        { 
+          firstq = firstq.first_question;
+         // let question = firsq.question(в этом методе сам текст вопроса); // тут должно быть поле вопросы из таблицы Question 
+          return question;
+        }
+    }
   Err(userId,text)
     {
     	let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для просмотра доступных функций';
@@ -129,27 +144,34 @@ export default class bot
     }
      Bot_start(userId,text)
     {
-    	let textToSend = 'Добро пожаловать! Что будете кушать? \n 1 - Фрукт \n 2 - Овощ \n 3 - Десерт  ';
+    	let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';
     	this.sendMessage(userId, textToSend);
     }
 	receiveMessage(from, text, username, date)
 	{
 
-			text = text.toLowerCase();
+			text = text.toLowerCase(); //optional
 		//	this.sendMessage(from,banana);
      var userflag = this.find(from);
-     if (userflag == true)
+     if (userflag == false)
      {
-      this.insert(from, text, username,  date);
-        console.log("true. данные ПЕРЕзаписаны.");
-        
+        this.insert(from, text, username,  date);
+        this.Bot_start(from); // вызываем метод firsq !!!!!!!!!
+        console.log("false. Новый пользователь добавлен.");  
      }
      else
       {
         this.update(from, text, username,  date);
-        console.log("false. данные записаны.");
+        console.log("true. Данные пользователя перезаписаны.");
       }
+ // если пользователь уже есть в базе, то мы ищем его последний ответ(меняем поле (findone по ответу и присваеваем переменной ). этот ответ
+//var q = Question.findOne({}) - последний вопрос бота
 
+
+
+ // var otvet = Log.findOne({chat_id: userId});     это все равно text
+ // otvet = otvet.last_answer;
+ //добавить ошибку
    // console.log(userflag);
 		
   	/*	switch(text) 
@@ -171,11 +193,24 @@ export default class bot
              this.insert(from,text, username, date);
             break;  		
        		default:
-          this.insert(from,text, username, date)
-				//this.Err(from);
+        //  this.insert(from,text, username, date)
+				this.Err(from);
 			break;
 		  } */
 	}	
 
 
 } // closing class bot
+
+
+
+
+/*import { Meteor } from 'meteor/meteor';
+import bot from './telebot.js'
+var verifyEmail = false;
+
+Accounts.config({ sendVerificationEmail: verifyEmail });
+
+Meteor.startup(function() {
+  //bot.fillDb();
+  const app = new bot(); */

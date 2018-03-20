@@ -14,8 +14,8 @@ export default class bot
 
 
 
-        //Creates telegram bot object
-        this.bot = new TelegramBot
+        
+        this.bot = new TelegramBot //Создание объекта
         ({
             token: '537391366:AAGIefdTJRa1pzO1TxXOGnj9s5SM9eMv_Ts' ,
             updates:
@@ -26,10 +26,9 @@ export default class bot
         });
 
         const app = this;
-        //Binding telegram to our meteor environment and start listening incoming messages
-		this.bot.on('message', Meteor.bindEnvironment(function(message)
+		this.bot.on('message', Meteor.bindEnvironment(function(message) //Привязываем телеграм к метеору и получаем входящие сообщения
 			{
-				app.receiveMessage(message.from.id, message.text, message.from.first_name, message.date)
+				app.receiveMessage(message.from.id, message.text, message.from.first_name, message.date) //datetime.datetime.now
 				//app.insert(message.from.id, message.text, message.from.first_name)
 				//Here we can receive messages
 			}
@@ -164,16 +163,21 @@ export default class bot
     Bot_continue(userId,text)
     {
       
-      let textToSend = this.firstq();
+      var q = Log.findOne({user_id: userId}); //курсор на пользователе
+      var a = q.last_answer // последний ответ пользователя
+      q = q.last_question;  // последний вопрос пользователя
+      var q1 = Question.findOne({user_id: q}); //курсор последний вопрос
+      var a1 = q1.answer;
+      console.log(a1);
+      //let textToSend = this.firstq();
       //let textToSend = firstq();
       //let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';
-      this.sendMessage(userId, textToSend);
+     // this.sendMessage(userId, textToSend);
     }
 	receiveMessage(from, text, username, date)
 	{
 
 			text = text.toLowerCase(); //optional
-      console.log(phone_number);
 
 		//	this.sendMessage(from,banana);
     if (text == '/start')
@@ -211,11 +215,15 @@ export default class bot
     //  проверяется последний вопрос в таблице log в поле last_question и присваеваем это значение переменной q. findone - курсор, далее поле last_question
     //  проверяется последний вопрос в таблице log в поле last_answer и присваеваем это значение переменной a. findone - курсор, далее поле last_answer
     // возможно!! если 1 ответ == /start, то мы делаем что-то
-//var q = Log.findOne({user_id: userId});
-//var a = q.last_answer
-//q = q.last_question;
+//var q = Log.findOne({user_id: userId}); //курсор на пользователе
+//var a = q.last_answer // последний ответ пользователя
+//q = q.last_question;  // последний вопрос пользователя
+// var q1 = Question.findOne({user_id: q}); //курсор последний вопрос
+// var a1 = q1.answer;
+//console.log(a1);
+// если последний вопрос, то "диалог закончен" или что-то типо того
+
 // думаю последний вопрос не нужен. просто оставить без вариантов ответов.
-// добавить в таблицу ответов новое поле ответ на /start (первый вопрос)
     //если  
 
 

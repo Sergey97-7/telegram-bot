@@ -64,6 +64,23 @@ export default class bot
         });
         Log.update({user_id: userId}, {$set:{last_question: text}});
     }
+    sendErrorstart(userId, text)
+    {
+        this.bot.sendMessage
+        ({
+            chat_id: userId,
+            text: text,
+            parse_mode: 'HTML'
+        }).catch((err)=>
+        {
+            console.log(err);
+
+            if (err.statusCode == 403)
+            {
+                return err;
+            }
+        });
+    }
 
     //const que = Messages.findone({}).fetch();
   // var question = question.find({},{fields: {Id:2}}).fetch();
@@ -150,7 +167,7 @@ export default class bot
     errorstart(userId,text)
     {
       let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для начала диалога';
-      this.sendMessage(userId, textToSend);
+      this.sendErrorstart(userId, textToSend);
     }
      Bot_start(userId,text)
     {
@@ -166,9 +183,19 @@ export default class bot
       var q = Log.findOne({user_id: userId}); //курсор на пользователе
       var a = q.last_answer // последний ответ пользователя
       q = q.last_question;  // последний вопрос пользователя
-      var q1 = Question.findOne({user_id: q}); //курсор последний вопрос
-      var a1 = q1.answer;
-      console.log(a1);
+
+      var q1 = Question.findOne({bot_msg: q}); //курсор последний вопрос в таблице вопросов
+      //var a1 = q1.answer.fetch(answer_var);
+     var a1 = q1.answer.answer_var; // поле в таблице вопросов. в нем содержится ссылка  на поле вариант ответа. a1 - варианты ответа на данный вопрос
+
+     var a2 = Answer.findOne({answer_var: a1}); // курсор на строчку в таблице ответов по ответу
+     var a3 = a2.answer_var;
+    // var a3 = 
+    // var a3 = a2.question.bot_msg; //задается следующий вопрос
+    // let textToSend = a3; 
+
+     //this.sendMessage(userId, textToSend);
+      console.log(a3);
       //let textToSend = this.firstq();
       //let textToSend = firstq();
       //let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';
@@ -177,7 +204,7 @@ export default class bot
 	receiveMessage(from, text, username, date)
 	{
 
-			text = text.toLowerCase(); //optional
+		//	text = text.toLowerCase(); //optional
 
 		//	this.sendMessage(from,banana);
     if (text == '/start')

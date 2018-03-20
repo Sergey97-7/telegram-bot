@@ -197,8 +197,10 @@ export default class bot
 
      //this.sendMessage(userId, textToSend);
     // console.log(q1);
-     //console.log(a1);
+     var nn = Question.findOne();
      console.log(q1);
+     console.log(a1);
+     console.log(nn);
     // console.log(a3);
    // console.log(a2);
     //console.log(a3);

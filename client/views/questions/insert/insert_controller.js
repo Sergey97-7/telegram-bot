@@ -19,6 +19,7 @@ this.QuestionsInsertController = RouteController.extend({
 		
 
 		var subs = [
+			Meteor.subscribe("answers"),
 			Meteor.subscribe("messages_empty")
 		];
 		var ready = true;
@@ -34,6 +35,7 @@ this.QuestionsInsertController = RouteController.extend({
 
 		var data = {
 			params: this.params || {},
+			answers: Answer.find({}, {}),
 			messages_empty: Question.findOne({_id:null}, {})
 		};
 		

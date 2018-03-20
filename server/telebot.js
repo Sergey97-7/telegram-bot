@@ -188,14 +188,16 @@ export default class bot
       //var a1 = q1.answer.fetch(answer_var);
      var a1 = q1.answer.answer_var; // поле в таблице вопросов. в нем содержится ссылка  на поле вариант ответа. a1 - варианты ответа на данный вопрос
 
-     var a2 = Answer.findOne({answer_var: a1}); // курсор на строчку в таблице ответов по ответу
-     var a3 = a2.answer_var;
+     var a2 = Answer.findOne({answer_var: a1, "answer_var": a}); // курсор на строчку в таблице ответов по ответу
+    // var a3 = a2.answer_var;
     // var a3 = 
-    // var a3 = a2.question.bot_msg; //задается следующий вопрос
+      var a3 = a2.question.bot_msg; //задается следующий вопрос
     // let textToSend = a3; 
 
      //this.sendMessage(userId, textToSend);
+     console.log(a2);
       console.log(a3);
+
       //let textToSend = this.firstq();
       //let textToSend = firstq();
       //let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';

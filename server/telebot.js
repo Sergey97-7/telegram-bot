@@ -190,6 +190,7 @@ export default class bot
 
     // var a2 = Answer.findOne({answer_var: a1, "answer_var": a}); // курсор на строчку в таблице ответов по ответу
      var a2 = Answer.findOne({answer_var: a1});
+     var array = new Array();
    //  var a3 = a2.answer_type;
     // var a3 = 
     //  var a3 = a2.question; //задается следующий вопрос

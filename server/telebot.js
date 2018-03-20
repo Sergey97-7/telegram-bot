@@ -63,6 +63,7 @@ export default class bot
                 return err;
             }
         });
+        Log.update({user_id: userId}, {$set:{last_question: text}});
     }
 
     //const que = Messages.findone({}).fetch();
@@ -128,48 +129,95 @@ export default class bot
 
   firstq() // проверка на первый вопрос. задан ли он. Если нет - ошибка. Если да - возвращает поле с текстом первого вопроса
     {
-      var firstq =Question.findOne({first_question: true});
-      if (firstq = "undefined") 
+      var firstq = Question.findOne({first_question: true});
+      if (typeof firstq == 'undefined') 
       {
         console.log("Ошибка! Первый вопрос не задан!");
-        return -1;
+        let er = "Ошибка!Первый вопрос не задан!"
+        return er;
       }
       else 
         { 
-          firstq = firstq.first_question;
-          let question = firstq.bot_msg;
-          return question;
+          firstq = firstq.bot_msg;
+          return firstq;
         }
     }
+
   Err(userId,text)
     {
     	let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для просмотра доступных функций';
     	this.sendMessage(userId, textToSend);
     }
+    errorstart(userId,text)
+    {
+      let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для начала диалога';
+      this.sendMessage(userId, textToSend);
+    }
      Bot_start(userId,text)
     {
-    	//this.firstq();
-    	let textToSend = firstq();
+    	
+      let textToSend = this.firstq();
+    	//let textToSend = firstq();
     	//let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';
     	this.sendMessage(userId, textToSend);
+    }
+    Bot_continue(userId,text)
+    {
+      
+      let textToSend = this.firstq();
+      //let textToSend = firstq();
+      //let textToSend = 'Начальный вопрос? \n 1 - Один \n 2 - Два \n 3 - Три  ';
+      this.sendMessage(userId, textToSend);
     }
 	receiveMessage(from, text, username, date)
 	{
 
 			text = text.toLowerCase(); //optional
+      console.log(phone_number);
+
 		//	this.sendMessage(from,banana);
-     var userflag = this.find(from);
-     if (userflag == false)
-     {
-        this.insert(from, text, username,  date);
-        this.Bot_start(from); // вызываем метод firsq !!!!!!!!!
-        console.log("false. Новый пользователь добавлен.");  
-     }
-     else
+    if (text == '/start')
+    {
+      var userflag = this.find(from); //проверка. есть ли пользователь в базе
+      if (userflag == false) // если нет, то создаем новую запись
+        {
+          this.insert(from, text, username,  date);
+          this.Bot_start(from); // вызываем метод firsq !!!!!!!!!
+          console.log("false. Новый пользователь добавлен.");  
+        }
+      else
+        {
+          this.update(from, text, username,  date);
+          this.Bot_start(from);
+          console.log("true. Данные пользователя перезаписаны.");
+        }
+    } //конец большого if
+    else // если юзер ввел другой текст(не /start )
       {
-        this.update(from, text, username,  date);
-        console.log("true. Данные пользователя перезаписаны.");
+        var userflag = this.find(from); //проверка. есть ли пользователь в базе
+        if (userflag == false) // если нет, то создаем новую запись
+        {
+          this.insert(from, text, username,  date);
+          this.errorstart(from); // вызываем метод firsq !!!!!!!!!
+          console.log("false. Новый пользователь добавлен.");  
+        }
+        else // именно тут мы продолжаем диалог с уже существующим пользователем после /start
+        {
+          this.update(from, text, username,  date);
+          this.Bot_continue(from);
+          console.log("true. Данные пользователя перезаписаны.");
+        }
       }
+    //  проверяется последний вопрос в таблице log в поле last_question и присваеваем это значение переменной q. findone - курсор, далее поле last_question
+    //  проверяется последний вопрос в таблице log в поле last_answer и присваеваем это значение переменной a. findone - курсор, далее поле last_answer
+    // возможно!! если 1 ответ == /start, то мы делаем что-то
+//var q = Log.findOne({user_id: userId});
+//var a = q.last_answer
+//q = q.last_question;
+// думаю последний вопрос не нужен. просто оставить без вариантов ответов.
+// добавить в таблицу ответов новое поле ответ на /start (первый вопрос)
+    //если  
+
 
    /*   switch(text)
       {

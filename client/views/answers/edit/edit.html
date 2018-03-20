@@ -62,7 +62,7 @@
 					Следующие вопросы
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" class="form-control " name="questionId" data-type="object">
+					<select class="form-control " name="questionId" data-type="object">
 						{{#each messages}}
 						<option value="{{_id}}" {{optionIsSelected ../answer_details.questionId _id}}>							{{bot_msg}}</option>
 						{{/each}}

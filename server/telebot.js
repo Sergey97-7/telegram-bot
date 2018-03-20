@@ -189,7 +189,7 @@ export default class bot
      var a1 = q1.answer.answer_var; // поле в таблице вопросов. в нем содержится ссылка  на поле вариант ответа. a1 - варианты ответа на данный вопрос
 
     // var a2 = Answer.findOne({answer_var: a1, "answer_var": a}); // курсор на строчку в таблице ответов по ответу
-     var a2 = Answer.findOne({answer_var: a1});
+     var a2 = Answer.findOne({answer_var: a1}).count();
      var array = new Array();
    //  var a3 = a2.answer_type;
     // var a3 = 
@@ -199,6 +199,7 @@ export default class bot
      //this.sendMessage(userId, textToSend);
     // console.log(q1);
      //console.log(a1);
+
      console.log(a);
     console.log(a2);
     //console.log(a3);

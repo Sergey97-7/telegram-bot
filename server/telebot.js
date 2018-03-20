@@ -64,7 +64,7 @@ export default class bot
         });
         Log.update({user_id: userId}, {$set:{last_question: text}});
     }
-    sendErrorstart(userId, text)
+    sendErrorstart(userId, text) // отправка сообщение без обновления информации
     {
         this.bot.sendMessage
         ({
@@ -191,7 +191,7 @@ export default class bot
     // var a2 = Answer.findOne({answer_var: a1, "answer_var": a}); // курсор на строчку в таблице ответов по ответу
      var a2 = Answer.findOne({answer_var: a1});
      var nn = Answer.findOne();
-   var a3 = nn.question.bot_msg;
+   var a3 = a2.question.bot_msg;
     // var a3 = 
     //  var a3 = a2.question; //задается следующий вопрос
     // let textToSend = a3; 
@@ -199,12 +199,10 @@ export default class bot
      //this.sendMessage(userId, textToSend);
     // console.log(q1);
     // var nn = Question.findOne();
-    console.log(nn);
-    console.log(a3)
-     /*console.log(q1);
-     console.log(a1);
-     console.log(a2);
-     console.log(a3);*/
+     console.log(nn);
+  // console.log(a1);
+    // console.log(a2);
+     //console.log(a3);
      //console.log(nn);
     // console.log(a3);
    // console.log(a2);

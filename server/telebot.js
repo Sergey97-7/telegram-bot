@@ -186,12 +186,11 @@ export default class bot
 
       var q1 = Question.findOne({bot_msg: q}); //курсор последний вопрос в таблице вопросов
       //var a1 = q1.answer.fetch(answer_var);
-     var a1 = q1.answer.answer_var; // поле в таблице вопросов. в нем содержится ссылка  на поле вариант ответа. a1 - варианты ответа на данный вопрос
+     var a1 = q1.answerId.answer_var; // поле в таблице вопросов. в нем содержится ссылка  на поле вариант ответа. a1 - варианты ответа на данный вопрос
 
     // var a2 = Answer.findOne({answer_var: a1, "answer_var": a}); // курсор на строчку в таблице ответов по ответу
-     var a2 = Answer.findOne({answer_var: a1}).count();
-     var array = new Array();
-   //  var a3 = a2.answer_type;
+     var a2 = Answer.findOne({answer_var: a1});
+   var a3 = a2.question.first_question;
     // var a3 = 
     //  var a3 = a2.question; //задается следующий вопрос
     // let textToSend = a3; 
@@ -199,9 +198,9 @@ export default class bot
      //this.sendMessage(userId, textToSend);
     // console.log(q1);
      //console.log(a1);
-
-     console.log(a);
-    console.log(a2);
+     console.log(q1);
+    // console.log(a3);
+   // console.log(a2);
     //console.log(a3);
 
       //let textToSend = this.firstq();
@@ -231,7 +230,7 @@ export default class bot
           console.log("true. Данные пользователя перезаписаны.");
         }
     } //конец большого if
-    else // если юзер ввел другой текст(не /start )
+      else // если юзер ввел другой текст(не /start )
       {
         var userflag = this.find(from); //проверка. есть ли пользователь в базе
         if (userflag == false) // если нет, то создаем новую запись

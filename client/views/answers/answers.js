@@ -43,7 +43,7 @@ var AnswersAnswerViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["answer_type", "answer_var", "questionId", "question.bot_msg"];
+		var searchFields = ["answer_type", "answer_var", "questionId", "question"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {

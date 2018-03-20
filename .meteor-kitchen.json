@@ -350,7 +350,7 @@
 		},
 		{
 			"path": "client/views/answers/insert/insert.html",
-			"checksum": "210d364062ef1f9a7881ca379b3e73d9e702b4e7"
+			"checksum": "852a93b1c481588d9e9b4f26f1e2f7b495146f64"
 		},
 		{
 			"path": "client/views/answers/insert/insert.js",
@@ -374,7 +374,7 @@
 		},
 		{
 			"path": "client/views/answers/edit/edit.html",
-			"checksum": "f8a80f83dafd1650e07e2707561137f568f7175d"
+			"checksum": "e8ad62cee6aec853ef4ca684c762c08c4d25dc9e"
 		},
 		{
 			"path": "client/views/answers/edit/edit.js",

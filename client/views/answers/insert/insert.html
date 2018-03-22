@@ -31,8 +31,7 @@
 				</label>
 				<div class="input-div">
 					<select class="form-control " name="answer_type" data-type="string" autofocus="autofocus">
-						<option value="int" selected>							число</option>
-						<option value="str">							строка</option>
+						<option value="string" selected>							строка</option>
 						<option value="select">							выбор</option>
 					</select>
 					<span id="help-text" class="help-block">
@@ -43,14 +42,10 @@
 			</div>
 			<div class="form-group  field-answer_var">
 				<label for="answer_var">
-					Варианты ответов
+					Вариант ответа
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" data-role="tagsinput" class="form-control " name="answer_var" data-type="array">
-						{{#each getArray ""}}
-						<option id="form-input-tags-item" value="{{this}}">							{{this}}</option>
-						{{/each}}
-					</select>
+					<input type="text" name="answer_var" value="" class="form-control " data-type="string">
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">
@@ -59,10 +54,10 @@
 			</div>
 			<div class="form-group  field-question-id">
 				<label for="questionId">
-					Следующие вопросы
+					Следующий вопросы
 				</label>
 				<div class="input-div">
-					<select multiple="multiple" class="form-control " name="questionId" data-type="array">
+					<select class="form-control " name="questionId" data-type="string">
 						{{#each messages}}
 						<option value="{{_id}}">							{{bot_msg}}</option>
 						{{/each}}

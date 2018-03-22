@@ -59,10 +59,10 @@
 					Тип ответа
 				</th>
 				<th class="th-sortable" data-sort="answer_var">
-					Варианты ответов
+					Вариант ответа
 				</th>
-				<th class="th-sortable" data-sort="question">
-					Следующие вопросы
+				<th class="th-sortable" data-sort="question.bot_msg">
+					Следующий вопросы
 				</th>
 				<th>
 					&nbsp;
@@ -87,7 +87,7 @@
 			{{answer_var}}
 		</td>
 		<td>
-			{{question}}
+			{{question.bot_msg}}
 		</td>
 		<td class="td-icon">
 			<span id="edit-button" class="fa fa-pencil {{editButtonClass}}" title="Edit">

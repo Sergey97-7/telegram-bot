@@ -70,7 +70,7 @@
 					Ответ
 				</label>
 				<div class="input-div">
-					<select class="form-control " name="answerId" data-type="object">
+					<select multiple="multiple" class="form-control " name="answerId" data-type="array">
 						{{#each answers}}
 						<option value="{{_id}}" {{optionIsSelected ../message_details.answerId _id}}>							{{answer_var}}</option>
 						{{/each}}

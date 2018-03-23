@@ -80,6 +80,10 @@ export default class bot
             [{
                 text: 'Share my phone number',
                 request_contact: true
+            }],
+            [{
+                text: 'Share my phone number',
+                request_contact: true
             }]
         ],
         resize_keyboard: true,
@@ -173,7 +177,7 @@ export default class bot
      Bot_start(userId,text)
     {
     	var firstq = Question.findOne({first_question: true});
-      console.log(firstq);
+      //console.log(firstq);
       if (typeof firstq == 'undefined') 
       {
         console.log("Ошибка! Первый вопрос не задан!");
@@ -182,17 +186,51 @@ export default class bot
       }
       else 
         {
-          var array = firstq.answer.answer_var
-          var qid = firstq.answerId;
+          var qid = firstq.answerId.answer_var;
+          console.log(qid);
+       //   var count = qid.length;
+         for (var i = 0; i<qid.length; i++)
+       {
+          var msg = Answer.findOne({_id: {$in:qid}});
+          msg = msg.answer_var;
+         var array = new Array();
+         for (var j= 0; j<qid.length; j++)
+         {
+          array.push(msg);
+         }
+         console.log(array);
+          this.bot.sendMessage
+        ({
+            chat_id: userId,
+            text: 'proveka',
+            parse_mode: 'HTML',
+            reply_markup: JSON.stringify({
+        keyboard: [ 
+            array
+           // [{
+           //     text: 'msg'
+           // }]
+        ],
+        resize_keyboard: true,
+        one_time_keyboard: true
+    })
+        })
+      }
+       // }
+
+          
+         // var msg = msg.answer_var;
+          console.log(msg);
          // key = 
          firstq = firstq.bot_msg;
       var a1 = Answer.findOne({_id: {$in:qid} });
       var otv = a1.question.bot_msg;
 
+      
+
       var type = a1.answer_type;
-      console.log(qid);
-      console.log(array);
-      console.log(a1);
+     // console.log(qid);
+     // console.log(a1);
     //  if (type == "select") 
      //   {
        //   this.sendKeyboard(userId,firstq, варианты отетов в JSON)
@@ -252,7 +290,8 @@ export default class bot
 	{
 
 			text = text.toLowerCase();
-     this.Bot_start(from);
+      //this.sendKeyboard(from,text);
+     this.Bot_start(from,text);
      // var danet = 
        //var keyboard = this.SendButtons();
 //this.sendKeyboard(from,text);

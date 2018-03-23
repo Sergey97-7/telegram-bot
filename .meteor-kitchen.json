@@ -242,11 +242,11 @@
 		},
 		{
 			"path": "client/views/questions/questions.html",
-			"checksum": "bf2589f9688b7f2cdc42f484776dbe54928f82a5"
+			"checksum": "78ea65cfff6bc08334d50be2a48899a263532c81"
 		},
 		{
 			"path": "client/views/questions/questions.js",
-			"checksum": "0182a19c90c684716d80dc0dd28a05746ebaf630"
+			"checksum": "d15cb42b65a8b26b4846299e639a247b11093dde"
 		},
 		{
 			"path": "client/views/questions/questions_controller.js",
@@ -266,7 +266,7 @@
 		},
 		{
 			"path": "client/views/questions/details/details.html",
-			"checksum": "1f04a54d6c5e1a59b1e5fe332b1adb406455b8f0"
+			"checksum": "99682a9868c90b3e0810a0a8fb00aed8cabf9dad"
 		},
 		{
 			"path": "client/views/questions/details/details.js",

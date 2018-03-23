@@ -64,7 +64,7 @@
 				<th class="th-sortable" data-sort="last_question">
 					Последний вопрос
 				</th>
-				<th class="th-sortable" data-sort="answer">
+				<th class="th-sortable" data-sort="answer.answer_var">
 					Ответ
 				</th>
 				<th>
@@ -93,7 +93,7 @@
 			<input type="checkbox" class="inline-checkbox {{editButtonClass}}" data-field="last_question" {{checked last_question}}>
 		</td>
 		<td>
-			{{answer}}
+			{{answer.answer_var}}
 		</td>
 		<td class="td-icon">
 			<span id="edit-button" class="fa fa-pencil {{editButtonClass}}" title="Edit">

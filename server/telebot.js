@@ -177,7 +177,7 @@ export default class bot
      Bot_start(userId,text)
     {
     	var firstq = Question.findOne({first_question: true});
-      //console.log(firstq);
+      console.log(firstq);
       if (typeof firstq == 'undefined') 
       {
         console.log("Ошибка! Первый вопрос не задан!");

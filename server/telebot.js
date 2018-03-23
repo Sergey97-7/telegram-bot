@@ -186,8 +186,9 @@ export default class bot
       }
       else 
         {
-          var qid = firstq.answerId.answer_var;
-          console.log(qid);
+          var qid = firstq.answerId;
+          var lalka = firstq.answer
+          console.log(lalka);
        //   var count = qid.length;
          for (var i = 0; i<qid.length; i++)
        {

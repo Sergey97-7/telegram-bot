@@ -41,7 +41,7 @@ export default class bot
         });
         Log.update({user_id: userId}, {$set:{last_question: text}});
     }
-    sendErrorstart(userId, text) // отправка сообщение без обновления информации
+    sendnolog(userId, text) // отправка сообщение без обновления информации
     {
         this.bot.sendMessage
         ({
@@ -101,7 +101,7 @@ export default class bot
       else return true; //userflag = true;
     }
 
-  firstq() // проверка на первый вопрос. задан ли он. Если нет - ошибка. Если да - возвращает поле с текстом первого вопроса
+    firstq() // проверка на первый вопрос. задан ли он. Если нет - ошибка. Если да - возвращает поле с текстом первого вопроса
     {
       var firstq = Question.findOne({first_question: true});
       if (typeof firstq == 'undefined') 
@@ -117,19 +117,20 @@ export default class bot
         }
     }
 
-  Err(userId,text)
+    Err(userId,text)
     {
     	let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для просмотра доступных функций';
-    	this.sendMessage(userId, textToSend);
+    	this.sendnolog(userId, textToSend);
     }
     errorstart(userId,text)
     {
       let textToSend = 'Некорректные данные! \nВведите \ "/start" \ для начала диалога';
-      this.sendErrorstart(userId, textToSend);
+      this.sendnolog(userId, textToSend);
     }
      Bot_start(userId,text)
     {
     	var firstq = Question.findOne({first_question: true});
+
       if (typeof firstq == 'undefined') 
       {
         console.log("Ошибка! Первый вопрос не задан!");
@@ -139,84 +140,85 @@ export default class bot
       else 
         {
           var qid = firstq.answerId;
-        var array = new Array(); // массив answer_var для вывода кнопок
-          var msg = Answer.find({_id: {$in:qid}}, {sort: {answer_var: 1}}); //, {answer_var:1} //ПРОБЛЕМА ТУТ  
-          msg.forEach((msg) => {
-            array.push(msg.answer_var);
-          });
-      firstq = firstq.bot_msg;
-      var a1 = Answer.findOne({_id: {$in:qid} });
-      var otv = a1.question.bot_msg;
-      var type = a1.answer_type;
-      if (type == "select") this.sendKeyboard(userId,firstq,array);
-      else 
-        {
-          this.sendMessage(userId,"Спасибо! Мы с вами свяжемся!")
-          Log.update({user_id: userId}, {$set:{note: text}});
+          var array = new Array(); 
+          var msg = Answer.find({_id: {$in:qid}}, {sort: {answer_var: 1}}); 
+          if (typeof msg == 'undefined') this.Err(userId);
+          else
+            {
+              msg.forEach((msg) => {
+              array.push(msg.answer_var);
+              });
+              firstq = firstq.bot_msg;
+              var a1 = Answer.findOne({_id: {$in:qid} });
+              var otv = a1.question.bot_msg;
+              var type = a1.answer_type;
+              if (type == "select") this.sendKeyboard(userId,firstq,array);
+          //    else 
+          //    {
+          //      this.sendnolog(userId,"Спасибо! Мы с вами свяжемся!")
+          //      Log.update({user_id: userId}, {$set:{note: text}});
+          //    }
+              }
+            }
         }
-        }
-    }
     Bot_continue(userId,text)
     {
       var q = Log.findOne({user_id: userId}); //курсор на пользователе
       var a = q.last_answer // последний ответ пользователя
       q = q.last_question;  // последний вопрос пользователю
       var q1 = Question.findOne({bot_msg: q }); 
-      if (q1.last_question == false)
-      {
-      var qid = q1.answerId; //строка id
-      var a1 = Answer.findOne({answer_var: a, _id: {$in:qid} }); // курсор на нужном ответе (след проверка на ввод)
-      var otv = a1.question.bot_msg;
-      var nextq = Question.findOne({bot_msg: otv});
-      qid = nextq.answerId;
-      var array = new Array(); // массив answer_var для вывода кнопок
-          var msg = Answer.find({_id: {$in:qid}, }, {sort: {answer_var: 1}}); //, {answer_var:1} //ПРОБЛЕМА ТУТ  
-          msg.forEach((msg) => {
+          var qid = q1.answerId; //строка id
+          var a1 = Answer.findOne({answer_var: a, _id: {$in:qid} }); // курсор на нужном ответе (след проверка на ввод)
+          if (typeof a1 == 'undefined') this.Err(userId);
+          else
+          {
+            var otv = a1.question.bot_msg;
+            var nextq = Question.findOne({bot_msg: otv});
+            qid = nextq.answerId;
+            var array = new Array(); // массив answer_var для вывода кнопок
+            var msg = Answer.find({_id: {$in:qid}, }, {sort: {answer_var: 1}}); //, {answer_var:1} //ПРОБЛЕМА ТУТ  
+            msg.forEach((msg) => 
+            {
             array.push(msg.answer_var);
-          });
-      var type = a1.answer_type;
-      if (type == "select") this.sendKeyboard(userId,otv,array);
-      else 
-        {
-          this.sendMessage(userId,"Спасибо! Мы с вами свяжемся!")
-          Log.update({user_id: userId}, {$set:{note: text}});
-        }
+            });
+            var type = a1.answer_type;
+            if (type == "select") this.sendKeyboard(userId,otv,array);
+         //   else 
+         //     {
+         //       this.sendnolog(userId,"Спасибо! Мы с вами свяжемся!")
+         //       Log.update({user_id: userId}, {$set:{note: text}});
+         //     }
+            }
       }
-      else this.sendMessage(userId,"Спасибо! Мы с вами свяжемся!") // универсальный ответ, если последний вопрос является последним в таблице
-    }
   receiveMessage(from, text, username, date)
 	{
-			text = text.toLowerCase();
-    if (text == '/start')
-    {
-      var userflag = this.find(from); //проверка. есть ли пользователь в базе
-      if (userflag == false) // если нет, то создаем новую запись
+		//	text = text.toLowerCase();
+      if (text == '/start')
+      {
+        var userflag = this.find(from); //проверка. есть ли пользователь в базе
+        if (userflag == false) // если нет, то создаем новую запись
         {
           this.insert(from, text, username,  date);
-          this.Bot_start(from); // вызываем метод firsq !!!!!!!!!
-          console.log("false. Новый пользователь добавлен.");  
+          this.Bot_start(from); 
         }
-      else
+        else
         {
           this.update(from, text, username,  date);
           this.Bot_start(from);
-          console.log("true. Данные пользователя перезаписаны.");
         }
-    } //конец большого if
+      } //конец большого if
       else // если юзер ввел другой текст(не /start )
       {
         var userflag = this.find(from); //проверка. есть ли пользователь в базе
         if (userflag == false) // если нет, то создаем новую запись
         {
           this.insert(from, text, username,  date);
-          this.errorstart(from); // вызываем метод firsq !!!!!!!!!
-          console.log("false. Новый пользователь добавлен.");  
+          this.errorstart(from); 
         }
         else // именно тут мы продолжаем диалог с уже существующим пользователем после /start
         {
           this.update(from, text, username,  date);
           this.Bot_continue(from);
-          console.log("true. Данные пользователя перезаписаны.");
         }
       } 
 	}	

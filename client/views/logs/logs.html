@@ -70,6 +70,9 @@
 				<th class="th-sortable" data-sort="time">
 					Время
 				</th>
+				<th class="th-sortable" data-sort="note">
+					Заметки
+				</th>
 				<th>
 					&nbsp;
 				</th>
@@ -100,6 +103,9 @@
 		</td>
 		<td>
 			{{secondsToTime time ''}}
+		</td>
+		<td>
+			{{note}}
 		</td>
 		<td class="td-icon">
 			<span id="edit-button" class="fa fa-pencil {{editButtonClass}}" title="Edit">

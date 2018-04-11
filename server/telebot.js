@@ -153,11 +153,6 @@ export default class bot
               var otv = a1.question.bot_msg;
               var type = a1.answer_type;
               if (type == "select") this.sendKeyboard(userId,firstq,array);
-          //    else 
-          //    {
-          //      this.sendnolog(userId,"Спасибо! Мы с вами свяжемся!")
-          //      Log.update({user_id: userId}, {$set:{note: text}});
-          //    }
               }
             }
         }
@@ -183,11 +178,6 @@ export default class bot
             });
             var type = a1.answer_type;
             if (type == "select") this.sendKeyboard(userId,otv,array);
-         //   else 
-         //     {
-         //       this.sendnolog(userId,"Спасибо! Мы с вами свяжемся!")
-         //       Log.update({user_id: userId}, {$set:{note: text}});
-         //     }
             }
       }
   receiveMessage(from, text, username, date)

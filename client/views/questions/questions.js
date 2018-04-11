@@ -43,7 +43,7 @@ var QuestionsNewDataViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["bot_msg", "first_question", "last_question", "answerId", "answer", "answer.answer_var"];
+		var searchFields = ["bot_msg", "first_question", "last_question", "answerId", "answer"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {

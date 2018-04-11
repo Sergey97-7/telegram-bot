@@ -242,11 +242,11 @@
 		},
 		{
 			"path": "client/views/questions/questions.html",
-			"checksum": "78ea65cfff6bc08334d50be2a48899a263532c81"
+			"checksum": "69164ed5ff3f46536c07fa7cb7b668e36b50f5d9"
 		},
 		{
 			"path": "client/views/questions/questions.js",
-			"checksum": "d15cb42b65a8b26b4846299e639a247b11093dde"
+			"checksum": "432144ac884bf5fe00b03d1d1e74786dd0ca788b"
 		},
 		{
 			"path": "client/views/questions/questions_controller.js",
@@ -266,7 +266,7 @@
 		},
 		{
 			"path": "client/views/questions/details/details.html",
-			"checksum": "99682a9868c90b3e0810a0a8fb00aed8cabf9dad"
+			"checksum": "fb2acb44dab77579e864bde75a7aec20085038d8"
 		},
 		{
 			"path": "client/views/questions/details/details.js",
@@ -338,7 +338,7 @@
 		},
 		{
 			"path": "client/views/answers/answers.html",
-			"checksum": "e081e0531d6ea92b0d96632dc7e53a8353f6c6d7"
+			"checksum": "0420c5c78e5cd1d075fb08dd959639ac079fe0a2"
 		},
 		{
 			"path": "client/views/answers/answers.js",
@@ -350,7 +350,7 @@
 		},
 		{
 			"path": "client/views/answers/insert/insert.html",
-			"checksum": "32697f04d42b5f6e749d3c94ea06dca20629b2b6"
+			"checksum": "245246f44c44797b1722e3d6e80d07313c986e7c"
 		},
 		{
 			"path": "client/views/answers/insert/insert.js",
@@ -362,7 +362,7 @@
 		},
 		{
 			"path": "client/views/answers/details/details.html",
-			"checksum": "d18b1c5075d86c5d6f22114dd579f50984c3154d"
+			"checksum": "2da94afd91be255599e87243031e180c985aa0f5"
 		},
 		{
 			"path": "client/views/answers/details/details.js",
@@ -374,7 +374,7 @@
 		},
 		{
 			"path": "client/views/answers/edit/edit.html",
-			"checksum": "90ce8406ff197a78aafb86c19fb37d5a159c63ab"
+			"checksum": "ed368d2063c28e6c2e2ef1986d81ae277a32f2f5"
 		},
 		{
 			"path": "client/views/answers/edit/edit.js",

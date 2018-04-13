@@ -2,7 +2,7 @@
 	"output_files": [
 		{
 			"path": "client/views/router.js",
-			"checksum": "937fa4359521b60861fe382227392d31c194d474"
+			"checksum": "a8384ab7ffa87260700b8b013e1880a6e0f06f7f"
 		},
 		{
 			"path": "server/controllers/router.js",
@@ -54,23 +54,11 @@
 		},
 		{
 			"path": "client/views/layout/layout.html",
-			"checksum": "9fa7266c3e2f12808ee63bd58d88dde93e2ca693"
+			"checksum": "1eeadb8def9397bcf9484bf79370c29c815ef437"
 		},
 		{
 			"path": "client/views/layout/layout.js",
-			"checksum": "140b21c4480333aa24b355be04b54ce0e7f0983f"
-		},
-		{
-			"path": "client/views/home_public/home_public.html",
-			"checksum": "71e50a121b364a4a1e03ba90a20cd83c341f8d68"
-		},
-		{
-			"path": "client/views/home_public/home_public.js",
-			"checksum": "f0715d7b47aa85c51286e3e2ff49af4009070952"
-		},
-		{
-			"path": "client/views/home_public/home_public_controller.js",
-			"checksum": "cd9e75a56062e534ce091f41322fba911ed3e10b"
+			"checksum": "56b820275facda80ec63a5419a4991b7efaf084a"
 		},
 		{
 			"path": "client/views/login/login.html",
@@ -585,34 +573,6 @@
 			"checksum": "6f25a97cb1bb9b8edcf0cb297eabfc9f94f1a80d"
 		},
 		{
-			"path": "client/components/editable_content/editable_content.html",
-			"checksum": "1e5797f840d88639fd52ac472771cab4e95e90cc"
-		},
-		{
-			"path": "client/components/editable_content/editable_content.js",
-			"checksum": "1e0ef160baf04a4917f89eda730d7cc5455d133d"
-		},
-		{
-			"path": "client/components/editable_content/editable_content.less",
-			"checksum": "d18cddf9caa9b1935d8fb7b12f7672bfd4d0a1d4"
-		},
-		{
-			"path": "both/collections/editable_content.js",
-			"checksum": "ca1008bd3fe0a190df1b85c6477c0209dc19f03d"
-		},
-		{
-			"path": "server/collections/editable_content.js",
-			"checksum": "d0e95e266ec48242cbfe0d4855f66b7e6c1210d0"
-		},
-		{
-			"path": "server/methods/editable_content.js",
-			"checksum": "4b54af057952aa4581e14fce9e73dc0db0728372"
-		},
-		{
-			"path": "server/publish/editable_content.js",
-			"checksum": "90c5d34cf5e9f8b5f2adeb373078a775aca36bc1"
-		},
-		{
 			"path": "client/lib/form_utils.js",
 			"checksum": "3fecb23d4f206376a8263bf9dd7debf5f0be8ef7"
 		}
@@ -625,7 +585,6 @@
 		"client/",
 		"client/components/",
 		"client/components/confirmation_dialog/",
-		"client/components/editable_content/",
 		"client/components/input_dialog/",
 		"client/lib/",
 		"client/lib/globals/",
@@ -647,7 +606,6 @@
 		"client/views/answers/insert/",
 		"client/views/forgot_password/",
 		"client/views/home_private/",
-		"client/views/home_public/",
 		"client/views/layout/",
 		"client/views/loading/",
 		"client/views/login/",
@@ -700,7 +658,6 @@
 			"copleykj:livestamp",
 			"less",
 			"nemo64:bootstrap@=3.3.5_2",
-			"perak:markdown",
 			"reactive-dict",
 			"mizzao:bootboxjs",
 			"momentjs:moment",

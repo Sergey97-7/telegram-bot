@@ -69,12 +69,6 @@ Template.layout.helpers({
 	}
 });
 
-Template.FreeLayout.onCreated(function() {
-	
-	var subs = [
-		];
-});
-
 Template.PublicLayout.onCreated(function() {
 	
 	var subs = [

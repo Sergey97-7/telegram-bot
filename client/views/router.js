@@ -39,7 +39,7 @@ Router.privateRoutes = [
 ];
 
 Router.freeRoutes = [
-	"home_public"
+	
 ];
 
 Router.roleMap = [
@@ -52,8 +52,8 @@ Router.roleMap = [
 	{ route: "user_settings.change_pass",	roles: ["user","admin"] }
 ];
 
-Router.defaultFreeRoute = "home_public";
-Router.defaultPublicRoute = "home_public";
+Router.defaultFreeRoute = "";
+Router.defaultPublicRoute = "login";
 Router.defaultPrivateRoute = "home_private";
 
 Router.waitOn(function() { 
@@ -77,7 +77,6 @@ Router.onBeforeAction(Router.ensureGranted, {only: Router.freeRoutes}); // yes, 
 
 Router.map(function () {
 	
-	this.route("/", {name: "home_public", title: "", controller: "HomePublicController"});
 	this.route("/login", {name: "login", title: "", controller: "LoginController"});
 	this.route("/register", {name: "register", title: "", controller: "RegisterController"});
 	this.route("/verify_email/:verifyEmailToken", {name: "verify_email", title: "", controller: "VerifyEmailController"});

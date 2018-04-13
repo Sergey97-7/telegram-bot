@@ -101,7 +101,7 @@ export default class bot
       else return true; //userflag = true;
     }
 
-    firstq() // проверка на первый вопрос. задан ли он. Если нет - ошибка. Если да - возвращает поле с текстом первого вопроса
+   /* firstq() // проверка на первый вопрос. задан ли он. Если нет - ошибка. Если да - возвращает поле с текстом первого вопроса
     {
       var firstq = Question.findOne({first_question: true});
       if (typeof firstq == 'undefined') 
@@ -115,7 +115,7 @@ export default class bot
           firstq = firstq.bot_msg;
           return firstq;
         }
-    }
+    } */
 
     Err(userId,text)
     {

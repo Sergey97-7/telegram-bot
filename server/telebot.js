@@ -18,12 +18,13 @@ export default class bot
         const app = this;
 		this.bot.on('message', Meteor.bindEnvironment(function(message) //Привязываем телеграм к метеору и получаем входящие сообщения
 			{
-				app.receiveMessage(message.from.id, message.text, message.from.first_name, message.date) 
+        if (typeof message.contact == 'undefined') app.receiveMessage(message.from.id, message.text, message.from.first_name, message.date)
+        else app.receiveMessage(message.from.id, message.text, message.from.first_name, message.date, message.contact.phone_number)
 				//Here we can receive messages
 			}
             ));
     }
-   sendMessage(userId, text) // сообщение без кнопок
+     sendMessage(userId, text) // сообщение без кнопок
     {
         this.bot.sendMessage
         ({
@@ -83,14 +84,40 @@ export default class bot
         });
         Log.update({user_id: userId}, {$set:{last_question: text}});
     }
+    sendphone(userId, text) // запрос номера телефона
+    {
+        this.bot.sendMessage
+        ({
+            chat_id: userId,
+            text: "Нажмите на кнопку, чтобы отправить нам свой номер.",
+            parse_mode: 'HTML',
+            reply_markup: JSON.stringify({
+        keyboard: 
+        [ 
+            [{
+              text: "Поделиться номером",
+              request_contact: true
+            }]
+        ],
+        resize_keyboard: true,
+        one_time_keyboard: true
+    })
+        }).catch((err)=>
+        {
+            console.log(err);
+
+            if (err.statusCode == 403)
+            {
+                return err;
+            }
+        });  
+    }
     insert(userId, text, from,  date) // если метод find() - false,то вызываем. Добавление нового пользователя
     {    
-    	
         Log.insert({ user_id: userId , last_answer: text, user_name: from ,   time: date});  
     }
     update(userId, text, from,  date) // / если метод find() - true,то вызываем. Обновляет уже существующего пользователя
     {
-
         Log.update({user_id: userId}, {$set:{user_id: userId, last_answer: text, user_name: from ,   time: date}}); 
     }
 
@@ -100,22 +127,11 @@ export default class bot
       if (typeof findUser == 'undefined')  return false; //var userflag = false;
       else return true; //userflag = true;
     }
-
-   /* firstq() // проверка на первый вопрос. задан ли он. Если нет - ошибка. Если да - возвращает поле с текстом первого вопроса
+    phone(userId)
     {
-      var firstq = Question.findOne({first_question: true});
-      if (typeof firstq == 'undefined') 
-      {
-        console.log("Ошибка! Первый вопрос не задан!");
-        let er = "Ошибка!Первый вопрос не задан!"
-        return err;
-      }
-      else 
-        { 
-          firstq = firstq.bot_msg;
-          return firstq;
-        }
-    } */
+      let textToSend = 'Спасибо! С вами скоро свяжутся!';
+      this.sendnolog(userId, textToSend);
+    }
 
     Err(userId,text)
     {
@@ -180,37 +196,51 @@ export default class bot
             if (type == "select") this.sendKeyboard(userId,otv,array);
             }
       }
-  receiveMessage(from, text, username, date)
+  receiveMessage(from, text, username, date, phone)
 	{
 		//	text = text.toLowerCase();
-      if (text == '/start')
+   switch(text)
+   {
+    case '/phone':
+    this.sendphone(from,text);   
+    break;
+
+    case '/start':
+    var userflag = this.find(from); //проверка. есть ли пользователь в базе
+    if (userflag == false) // если нет, то создаем новую запись
+    {
+      this.insert(from, text, username,  date);
+      this.Bot_start(from); 
+    }
+    else
+    {
+      this.update(from, text, username,  date);
+      this.Bot_start(from);
+    }
+    break;
+
+    default:
+    if (typeof text == 'undefined')
+    {
+      this.phone(from);
+      Log.update({user_id: from}, {$set:{note: phone}});
+    } 
+    else
+    {
+      var userflag = this.find(from); //проверка. есть ли пользователь в базе
+      if (userflag == false) // если нет, то создаем новую запись
       {
-        var userflag = this.find(from); //проверка. есть ли пользователь в базе
-        if (userflag == false) // если нет, то создаем новую запись
-        {
-          this.insert(from, text, username,  date);
-          this.Bot_start(from); 
-        }
-        else
-        {
-          this.update(from, text, username,  date);
-          this.Bot_start(from);
-        }
-      } //конец большого if
-      else // если юзер ввел другой текст(не /start )
+        this.insert(from, text, username,  date);
+       this.errorstart(from); 
+      }
+      else // именно тут мы продолжаем диалог с уже существующим пользователем после /start
       {
-        var userflag = this.find(from); //проверка. есть ли пользователь в базе
-        if (userflag == false) // если нет, то создаем новую запись
-        {
-          this.insert(from, text, username,  date);
-          this.errorstart(from); 
-        }
-        else // именно тут мы продолжаем диалог с уже существующим пользователем после /start
-        {
-          this.update(from, text, username,  date);
-          this.Bot_continue(from);
-        }
-      } 
+       this.update(from, text, username,  date);
+       this.Bot_continue(from);
+      }
+    }
+    break;
+   }
 	}	
 } // closing class bot
 
@@ -226,3 +256,4 @@ Accounts.config({ sendVerificationEmail: verifyEmail });
 Meteor.startup(function() {
   const app = new bot(); */
   //server.js
+

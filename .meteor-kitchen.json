@@ -254,7 +254,7 @@
 		},
 		{
 			"path": "client/views/questions/insert/insert.html",
-			"checksum": "f2f19e5880725b62911c3a8b4bbf98c40c63e4da"
+			"checksum": "78d41eb009f0d53886255684cf0a896f4f2ca6dd"
 		},
 		{
 			"path": "client/views/questions/insert/insert.js",
@@ -278,7 +278,7 @@
 		},
 		{
 			"path": "client/views/questions/edit/edit.html",
-			"checksum": "9ebe3eece2e365a3d00a08a2bad45180b1c43748"
+			"checksum": "886f2e7be107fc775d2ff1b6168397162c75c686"
 		},
 		{
 			"path": "client/views/questions/edit/edit.js",

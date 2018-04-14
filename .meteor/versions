@@ -73,6 +73,7 @@ npm-mongo@2.2.34
 observe-sequence@1.0.16
 ordered-dict@1.1.0
 perak:joins@1.1.9
+perak:markdown@1.0.5
 perak:user-roles@1.0.12
 promise@0.10.2
 rajit:bootstrap3-datepicker@1.7.1_1

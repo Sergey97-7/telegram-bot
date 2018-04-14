@@ -1,9 +1,11 @@
+import { Meteor } from 'meteor/meteor'; 
+import bot from './telebot.js'
 var verifyEmail = false;
 
 Accounts.config({ sendVerificationEmail: verifyEmail });
 
 Meteor.startup(function() {
-	// read environment variables from Meteor.settings
+  const app = new bot();	// read environment variables from Meteor.settings
 	if(Meteor.settings && Meteor.settings.env && _.isObject(Meteor.settings.env)) {
 		for(var variableName in Meteor.settings.env) {
 			process.env[variableName] = Meteor.settings.env[variableName];

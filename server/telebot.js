@@ -83,7 +83,7 @@ export default class bot
             }
         });
         Log.update({user_id: userId}, {$set:{last_question: text}});
-    }
+    } 
     sendphone(userId, text) // запрос номера телефона
     {
         this.bot.sendMessage

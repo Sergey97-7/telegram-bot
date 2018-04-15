@@ -187,7 +187,7 @@ export default class bot
             var nextq = Question.findOne({bot_msg: otv});
             qid = nextq.answerId;
             var array = new Array(); // массив answer_var для вывода кнопок
-            var msg = Answer.find({_id: {$in:qid}, }, {sort: {answer_var: 1}}); //, {answer_var:1} //ПРОБЛЕМА ТУТ  
+            var msg = Answer.find({_id: {$in:qid}, }, {sort: {answer_var: -1}}); //, {answer_var:1} //ПРОБЛЕМА ТУТ  
             msg.forEach((msg) => 
             {
             array.push(msg.answer_var);
@@ -223,7 +223,7 @@ export default class bot
     if (typeof text == 'undefined')
     {
       this.phone(from);
-      Log.update({user_id: from}, {$set:{note: phone}});
+      Log.update({user_id: from}, {$set:{phone: phone}});
     } 
     else
     {

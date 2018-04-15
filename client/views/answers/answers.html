@@ -55,8 +55,8 @@
 	<table id="dataview-table" class="table table-striped table-hover">
 		<thead id="dataview-table-header">
 			<tr id="dataview-table-header-row">
-				<th class="th-sortable" data-sort="answer_type">
-					Тип ответа
+				<th class="th-sortable" data-sort="save">
+					Запомнить?
 				</th>
 				<th class="th-sortable" data-sort="answer_var">
 					Вариант ответа
@@ -81,7 +81,7 @@
 <template name="AnswersAnswerViewTableItems">
 	<tr id="dataview-table-items-row">
 		<td>
-			{{answer_type}}
+			<input type="checkbox" class="inline-checkbox {{editButtonClass}}" data-field="save" {{checked save}}>
 		</td>
 		<td>
 			{{answer_var}}

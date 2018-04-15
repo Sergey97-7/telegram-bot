@@ -25,15 +25,14 @@
 				{{infoMessage}}
 			</div>
 			{{/if}}
-			<div class="form-group  field-answer_type">
-				<label for="answer_type">
-					Тип ответа
-				</label>
+			<div class="form-group  field-save">
 				<div class="input-div">
-					<select class="form-control " name="answer_type" data-type="string" autofocus="autofocus">
-						<option value="string" selected>							строка</option>
-						<option value="select">							выбор</option>
-					</select>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="" name="save" data-type="bool" autofocus="autofocus">
+							Запомнить?
+						</label>
+					</div>
 					<span id="help-text" class="help-block">
 					</span>
 					<span id="error-text" class="help-block">

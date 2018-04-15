@@ -43,7 +43,7 @@ var LogsLogViewItems = function(cursor) {
 	} else {
 		searchString = searchString.replace(".", "\\.");
 		var regEx = new RegExp(searchString, "i");
-		var searchFields = ["user_id", "user_name", "last_question", "last_answer", "time", "note"];
+		var searchFields = ["user_id", "user_name", "last_question", "last_answer", "time", "phone", "note"];
 		filtered = _.filter(raw, function(item) {
 			var match = false;
 			_.each(searchFields, function(field) {

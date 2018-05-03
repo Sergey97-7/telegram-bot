@@ -167,8 +167,8 @@ export default class bot
               firstq = firstq.bot_msg;
               var a1 = Answer.findOne({_id: {$in:qid} });
               var otv = a1.question.bot_msg;
-              var type = a1.answer_type;
-              if (type == "select") this.sendKeyboard(userId,firstq,array);
+              var save = a1.save;
+              this.sendKeyboard(userId,firstq,array);
               }
             }
         }
@@ -192,8 +192,9 @@ export default class bot
             {
             array.push(msg.answer_var);
             });
-            var type = a1.answer_type;
-            if (type == "select") this.sendKeyboard(userId,otv,array);
+            var save = a1.save;
+            if (save == true) Log.update({user_id: userId}, {$push: {note: a}})
+            this.sendKeyboard(userId,otv,array);
             }
       }
   receiveMessage(from, text, username, date, phone)

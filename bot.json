@@ -1,0 +1,847 @@
+{
+	"application": {
+		"title": "My application",
+		"theme": "bootswatch-flatly",
+		"roles": [
+			"admin",
+			"user"
+		],
+		"default_role": "user",
+		"collections": [
+			{
+				"name": "question",
+				"type": "collection",
+				"fields": [
+					{
+						"name": "bot_msg",
+						"title": "Вопрос",
+						"type": "string",
+						"input": "textarea"
+					},
+					{
+						"name": "first_question",
+						"title": "Первый вопрос",
+						"type": "bool",
+						"input": "checkbox"
+					},
+					{
+						"name": "last_question",
+						"title": "Последний вопрос",
+						"type": "bool",
+						"input": "checkbox"
+					},
+					{
+						"name": "answerId",
+						"title": "Ответ",
+						"type": "array",
+						"input": "select-multiple",
+						"lookup_query_name": "answers",
+						"lookup_key": "_id",
+						"lookup_field": "answer_var",
+						"array_item_type": "object",
+						"join_collection": "answer",
+						"join_container": "answer",
+						"join_fields": [
+							"answer_var"
+						],
+						"show_in_dataview": false,
+						"show_in_read_only_form": false
+					},
+					{
+						"name": "answer",
+						"title": "Ответ",
+						"type": "array",
+						"array_item_type": "object",
+						"show_in_insert_form": false,
+						"show_in_update_form": false
+					}
+				]
+			},
+			{
+				"name": "log",
+				"type": "collection",
+				"fields": [
+					{
+						"name": "user_id",
+						"title": "Id пользователя",
+						"type": "string"
+					},
+					{
+						"name": "user_name",
+						"title": "Никнейм",
+						"type": "string"
+					},
+					{
+						"name": "last_question",
+						"title": "Последний вопрос",
+						"type": "string"
+					},
+					{
+						"name": "last_answer",
+						"title": "Последний ответ",
+						"type": "string"
+					},
+					{
+						"name": "time",
+						"title": "Время",
+						"type": "time"
+					},
+					{
+						"name": "phone",
+						"title": "Телефон",
+						"type": "string"
+					},
+					{
+						"name": "note",
+						"title": "note",
+						"type": "string"
+					}
+				]
+			},
+			{
+				"name": "answer",
+				"type": "collection",
+				"fields": [
+					{
+						"name": "save",
+						"title": "Запомнить?",
+						"type": "bool",
+						"input": "checkbox",
+					},
+					{
+						"name": "answer_var",
+						"title": "Вариант ответа",
+						"type": "string"
+					},
+					{
+						"name": "questionId",
+						"title": "Следующий вопрос",
+						"type": "string",
+						"input": "select-multiple",
+						"lookup_query_name": "messages",
+						"lookup_key": "_id",
+						"lookup_field": "bot_msg",
+						"join_collection": "question",
+						"join_container": "question",
+						"join_fields": [
+							"bot_msg"
+						],
+						"show_in_dataview": false,
+						"show_in_read_only_form": false
+					},
+					{
+						"name": "question.bot_msg",
+						"title": "Следующий вопросы",
+						"type": "string",
+						"show_in_insert_form": false,
+						"show_in_update_form": false
+					}
+				]
+			}
+		],
+		"queries": [
+			{
+				"name": "admin_users",
+				"collection": "users",
+				"filter": "{}",
+				"options": "{}"
+			},
+			{
+				"name": "admin_user",
+				"collection": "users",
+				"find_one": true,
+				"filter": "{ \"_id\": \":userId\" }",
+				"options": "{}"
+			},
+			{
+				"name": "users_null",
+				"collection": "users",
+				"find_one": true,
+				"filter": "{ \"_id\": null }",
+				"options": "{}"
+			},
+			{
+				"name": "current_user_data",
+				"collection": "users",
+				"find_one": true,
+				"filter": "{ \"_id\": \"Meteor.userId()\" }",
+				"options": "{}"
+			},
+			{
+				"name": "messages",
+				"collection": "question",
+				"filter": "{}",
+				"options": "{}"
+			},
+			{
+				"name": "messages_empty",
+				"collection": "question",
+				"find_one": true,
+				"filter": "{\"_id\":null}",
+				"options": "{}"
+			},
+			{
+				"name": "message_details",
+				"collection": "question",
+				"find_one": true,
+				"filter": "{\"_id\":\":botId\"}",
+				"options": "{}"
+			},
+			{
+				"name": "logs",
+				"collection": "log",
+				"filter": "{}",
+				"options": "{}"
+			},
+			{
+				"name": "log_details",
+				"collection": "log",
+				"find_one": true,
+				"filter": "{\"_id\":\":logId\"}",
+				"options": "{}"
+			},
+			{
+				"name": "answers",
+				"collection": "answer",
+				"filter": "{}",
+				"options": "{}"
+			},
+			{
+				"name": "answer_details",
+				"collection": "answer",
+				"find_one": true,
+				"filter": "{\"_id\":\":answerId\"}",
+				"options": "{}"
+			},
+			{
+				"name": "answer_empty",
+				"collection": "answer",
+				"find_one": true,
+				"filter": "{\"_id\":null}",
+				"options": "{}"
+			},
+			{
+				"name": "log_empty",
+				"collection": "log",
+				"find_one": true,
+				"filter": "{\"_id\":null}",
+				"options": "{}"
+			}
+		],
+		"free_zone": {
+			"type": "zone",
+			"pages": [
+				{
+					"name": "home_public",
+					"type": "page",
+					"components": [
+						{
+							"name": "home_jumbotron",
+							"type": "jumbotron",
+							"title": "My application",
+							"text": "<b>Данный сайт является интерфейсом для редактирования чат-бота</b>",
+							"button_title": "Continue &raquo;",
+							"button_route": "login",
+							"object_type": "jumbotron"
+						},
+						{
+							"name": "home_cms_box",
+							"type": "editable_content",
+							"text_if_empty": "Micro CMS - Admin can change this text",
+							"object_type": "editable_content"
+						}
+					]
+				}
+			]
+		},
+		"public_zone": {
+			"type": "zone",
+			"components": [
+				{
+					"name": "left_menu",
+					"type": "menu",
+					"items": [
+						{
+							"title": "Home",
+							"route": "home_public"
+						}
+					],
+					"object_type": "menu"
+				},
+				{
+					"name": "right_menu",
+					"type": "menu",
+					"items": [
+						{
+							"title": "Register",
+							"route": "register"
+						},
+						{
+							"title": "Login",
+							"route": "login"
+						}
+					],
+					"object_type": "menu"
+				}
+			],
+			"pages": [
+				{
+					"name": "login",
+					"type": "page",
+					"template": "login"
+				},
+				{
+					"name": "register",
+					"type": "page",
+					"template": "register"
+				},
+				{
+					"name": "verify_email",
+					"type": "page",
+					"template": "verify_email",
+					"route_params": [
+						"verifyEmailToken"
+					]
+				},
+				{
+					"name": "forgot_password",
+					"type": "page",
+					"template": "forgot_password"
+				},
+				{
+					"name": "reset_password",
+					"type": "page",
+					"template": "reset_password",
+					"route_params": [
+						"resetPasswordToken"
+					]
+				}
+			],
+			"default_route": "home_public"
+		},
+		"private_zone": {
+			"type": "zone",
+			"components": [
+				{
+					"name": "left_menu",
+					"type": "menu",
+					"items": [
+						{
+							"title": "Home",
+							"route": "home_private",
+							"icon_class": "fa fa-home"
+						}
+					],
+					"object_type": "menu"
+				},
+				{
+					"name": "right_menu",
+					"type": "menu",
+					"items": [
+						{
+							"title": "Admin",
+							"route": "admin",
+							"icon_class": "fa fa-wrench"
+						},
+						{
+							"title": "{{userEmail}}",
+							"icon_class": "fa fa-cog",
+							"items": [
+								{
+									"title": "Settings",
+									"route": "user_settings"
+								},
+								{
+									"title": "Logout",
+									"route": "logout"
+								}
+							]
+						},
+						{
+							"title": "Questions",
+							"route": "questions"
+						},
+						{
+							"title": "Answers",
+							"route": "answers"
+						},
+						{
+							"title": "Logs",
+							"route": "logs"
+						}
+					],
+					"object_type": "menu"
+				}
+			],
+			"pages": [
+				{
+					"name": "home_private",
+					"type": "page",
+					"title": "Welcome {{userFullName}}!"
+				},
+				{
+					"name": "admin",
+					"type": "page",
+					"components": [
+						{
+							"name": "side_menu",
+							"type": "menu",
+							"class": "nav nav-stacked nav-pills",
+							"items": [
+								{
+									"title": "Users",
+									"route": "admin.users"
+								}
+							],
+							"object_type": "menu"
+						}
+					],
+					"roles": [
+						"admin"
+					],
+					"pages": [
+						{
+							"name": "users",
+							"type": "page",
+							"components": [
+								{
+									"name": "view",
+									"type": "data_view",
+									"title": "Users",
+									"query_name": "admin_users",
+									"text_if_empty": "No users yet",
+									"details_route": "admin.users.details",
+									"edit_route": "admin.users.edit",
+									"details_route_params": [
+										{
+											"name": "userId",
+											"value": "this._id"
+										}
+									],
+									"edit_route_params": [
+										{
+											"name": "userId",
+											"value": "this._id"
+										}
+									],
+									"fields": [
+										{
+											"name": "profile.name",
+											"title": "Name",
+											"type": "string"
+										},
+										{
+											"name": "roles",
+											"title": "Role",
+											"type": "string"
+										}
+									],
+									"object_type": "data_view"
+								}
+							],
+							"pages": [
+								{
+									"name": "details",
+									"type": "page",
+									"components": [
+										{
+											"name": "details_form",
+											"type": "form",
+											"title": "User details",
+											"query_name": "admin_user",
+											"mode": "read_only",
+											"close_route": "admin.users",
+											"back_route": "admin.users",
+											"fields": [
+												{
+													"name": "profile.name",
+													"title": "Name",
+													"type": "string"
+												},
+												{
+													"name": "roles",
+													"title": "Role",
+													"type": "string"
+												}
+											],
+											"object_type": "form"
+										}
+									],
+									"route_params": [
+										"userId"
+									]
+								},
+								{
+									"name": "edit",
+									"type": "page",
+									"components": [
+										{
+											"name": "edit_form",
+											"type": "form",
+											"title": "Edit user",
+											"query_name": "admin_user",
+											"mode": "update",
+											"submit_route": "admin.users",
+											"cancel_route": "admin.users",
+											"fields": [
+												{
+													"name": "profile.name",
+													"title": "Name",
+													"type": "string",
+													"required": true
+												},
+												{
+													"name": "roles",
+													"title": "Role",
+													"type": "array",
+													"input": "radio",
+													"input_items": [
+														{
+															"value": "user",
+															"title": "User"
+														},
+														{
+															"value": "admin",
+															"title": "Admin"
+														},
+														{
+															"value": "blocked",
+															"title": "Blocked"
+														}
+													]
+												}
+											],
+											"object_type": "form"
+										}
+									],
+									"route_params": [
+										"userId"
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "user_settings",
+					"type": "page",
+					"components": [
+						{
+							"name": "side_menu",
+							"type": "menu",
+							"class": "nav nav-stacked nav-pills",
+							"items": [
+								{
+									"title": "Profile",
+									"route": "user_settings.profile"
+								},
+								{
+									"title": "Change password",
+									"route": "user_settings.change_pass"
+								}
+							],
+							"object_type": "menu"
+						}
+					],
+					"roles": [
+						"user",
+						"admin"
+					],
+					"pages": [
+						{
+							"name": "profile",
+							"type": "page",
+							"components": [
+								{
+									"name": "edit_form",
+									"type": "form",
+									"title": "Edit your profile",
+									"query_name": "current_user_data",
+									"mode": "update",
+									"submit_route": "user_settings.profile",
+									"fields": [
+										{
+											"name": "profile.name",
+											"title": "Name",
+											"type": "string",
+											"required": true
+										}
+									],
+									"object_type": "form"
+								}
+							]
+						},
+						{
+							"name": "change_pass",
+							"type": "page",
+							"template": "change_pass"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"type": "page",
+					"template": "logout"
+				},
+				{
+					"name": "questions",
+					"type": "page",
+					"components": [
+						{
+							"name": "new_data_view",
+							"type": "data_view",
+							"title": "Вопросы",
+							"query_name": "messages",
+							"text_if_empty": "Пусто",
+							"insert_route": "questions.insert",
+							"details_route": "questions.details",
+							"edit_route": "questions.edit",
+							"details_route_params": [
+								{
+									"name": "botId",
+									"value": "this._id"
+								}
+							],
+							"edit_route_params": [
+								{
+									"name": "botId",
+									"value": "this._id"
+								}
+							],
+							"object_type": "data_view"
+						}
+					],
+					"pages": [
+						{
+							"name": "insert",
+							"type": "page",
+							"components": [
+								{
+									"name": "insert_form",
+									"type": "form",
+									"title": "Новый вопрос",
+									"query_name": "messages_empty",
+									"mode": "insert",
+									"submit_route": "questions",
+									"cancel_route": "questions",
+									"object_type": "form"
+								}
+							]
+						},
+						{
+							"name": "details",
+							"type": "page",
+							"components": [
+								{
+									"name": "details_form",
+									"type": "form",
+									"title": "Детали",
+									"query_name": "message_details",
+									"mode": "read_only",
+									"layout": "horizontal",
+									"close_route": "questions",
+									"back_route": "questions",
+									"object_type": "form"
+								}
+							],
+							"route_params": [
+								"botId"
+							]
+						},
+						{
+							"name": "edit",
+							"type": "page",
+							"components": [
+								{
+									"name": "edit_form",
+									"type": "form",
+									"title": "Редактирование",
+									"query_name": "message_details",
+									"mode": "update",
+									"submit_route": "questions",
+									"cancel_route": "questions",
+									"object_type": "form"
+								}
+							],
+							"route_params": [
+								"botId"
+							]
+						}
+					]
+				},
+				{
+					"name": "logs",
+					"type": "page",
+					"components": [
+						{
+							"name": "log_view",
+							"type": "data_view",
+							"title": "История",
+							"query_name": "logs",
+							"text_if_empty": "Пусто",
+							"insert_route": "logs.insert",
+							"details_route": "logs.details",
+							"edit_route": "logs.edit",
+							"details_route_params": [
+								{
+									"name": "logId",
+									"value": "this._id"
+								}
+							],
+							"edit_route_params": [
+								{
+									"name": "logId",
+									"value": "this._id"
+								}
+							],
+							"object_type": "data_view"
+						}
+					],
+					"pages": [
+						{
+							"name": "details",
+							"type": "page",
+							"components": [
+								{
+									"name": "details_form",
+									"type": "form",
+									"title": "Детали",
+									"query_name": "log_details",
+									"mode": "read_only",
+									"layout": "horizontal",
+									"close_route": "logs",
+									"back_route": "logs",
+									"object_type": "form"
+								}
+							],
+							"route_params": [
+								"logId"
+							]
+						},
+						{
+							"name": "edit",
+							"type": "page",
+							"components": [
+								{
+									"name": "edit_form",
+									"type": "form",
+									"title": "Редактирование",
+									"query_name": "log_details",
+									"mode": "update",
+									"submit_route": "logs",
+									"cancel_route": "logs",
+									"object_type": "form"
+								}
+							],
+							"route_params": [
+								"logId"
+							]
+						},
+						{
+							"name": "insert",
+							"type": "page",
+							"components": [
+								{
+									"name": "insert_form",
+									"type": "form",
+									"title": "Новая история",
+									"query_name": "log_empty",
+									"mode": "insert",
+									"submit_route": "logs",
+									"cancel_route": "logs",
+									"object_type": "form"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "answers",
+					"type": "page",
+					"components": [
+						{
+							"name": "answer_view",
+							"type": "data_view",
+							"title": "Ответы",
+							"query_name": "answers",
+							"text_if_empty": "Пусто",
+							"insert_route": "answers.insert",
+							"details_route": "answers.details",
+							"edit_route": "answers.edit",
+							"details_route_params": [
+								{
+									"name": "answerId",
+									"value": "this._id"
+								}
+							],
+							"edit_route_params": [
+								{
+									"name": "answerId",
+									"value": "this._id"
+								}
+							],
+							"object_type": "data_view"
+						}
+					],
+					"pages": [
+						{
+							"name": "insert",
+							"type": "page",
+							"components": [
+								{
+									"name": "answer_insert",
+									"type": "form",
+									"title": "Новый ответ",
+									"query_name": "answer_empty",
+									"mode": "insert",
+									"submit_route": "answers",
+									"cancel_route": "answers",
+									"object_type": "form"
+								}
+							]
+						},
+						{
+							"name": "details",
+							"type": "page",
+							"components": [
+								{
+									"name": "details_answer",
+									"type": "form",
+									"title": "Детали",
+									"query_name": "answer_details",
+									"mode": "read_only",
+									"layout": "horizontal",
+									"close_route": "answers",
+									"back_route": "answers",
+									"object_type": "form"
+								}
+							],
+							"route_params": [
+								"answerId"
+							]
+						},
+						{
+							"name": "edit",
+							"type": "page",
+							"components": [
+								{
+									"name": "edit_answer",
+									"type": "form",
+									"title": "Редактирование",
+									"query_name": "answer_details",
+									"mode": "update",
+									"submit_route": "answers",
+									"cancel_route": "answers",
+									"object_type": "form"
+								}
+							],
+							"route_params": [
+								"answerId"
+							]
+						}
+					]
+				}
+			]
+		}
+	}
+}
